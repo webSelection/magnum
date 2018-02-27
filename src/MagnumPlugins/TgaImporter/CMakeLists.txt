@@ -23,6 +23,8 @@
 #   DEALINGS IN THE SOFTWARE.
 #
 
+find_package(Corrade REQUIRED PluginManager)
+
 if(BUILD_PLUGINS_STATIC)
     set(MAGNUM_TGAIMPORTER_BUILD_STATIC 1)
 endif()
@@ -63,7 +65,9 @@ add_plugin(TgaImporter
 if(BUILD_STATIC_PIC)
     set_target_properties(TgaImporter PROPERTIES POSITION_INDEPENDENT_CODE ON)
 endif()
-target_link_libraries(TgaImporter Magnum)
+target_link_libraries(TgaImporter PUBLIC
+    Magnum
+    MagnumTrade)
 
 install(FILES ${TgaImporter_HEADERS} DESTINATION ${MAGNUM_PLUGINS_INCLUDE_INSTALL_DIR}/TgaImporter)
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/configure.h DESTINATION ${MAGNUM_PLUGINS_INCLUDE_INSTALL_DIR}/TgaImporter)
@@ -73,7 +77,9 @@ if(BUILD_TESTS)
         $<TARGET_OBJECTS:TgaImporterObjects>
         ${PROJECT_SOURCE_DIR}/src/dummy.cpp) # XCode workaround, see file comment for details
     set_target_properties(MagnumTgaImporterTestLib PROPERTIES FOLDER "MagnumPlugins/TgaImporter")
-    target_link_libraries(MagnumTgaImporterTestLib Magnum)
+    target_link_libraries(MagnumTgaImporterTestLib PUBLIC
+        Magnum
+        MagnumTrade)
 
     add_subdirectory(Test)
 endif()

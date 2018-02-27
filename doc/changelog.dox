@@ -51,6 +51,11 @@ See also:
         @webgl_extension{WEBGL,color_buffer_float},
         @webgl_extension{EXT,color_buffer_float}
 
+@subsection changelog-latest-changes Changes
+
+-   The @ref Trade namespace is now a separate library, allowing to use core
+    Magnum functionality without @ref Corrade::PluginManager
+
 @subsection changelog-latest-compatibility Potential compatibility breakages, removed APIs
 
 -   Removed the @cpp Buffer::Usage @ce enum that was deprecated in 2014.01, use
