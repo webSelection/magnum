@@ -33,7 +33,7 @@
 
 #include <Corrade/Containers/Array.h>
 
-#include "Magnum/Buffer.h"
+#include "Magnum/GL/Buffer.h"
 #include "Magnum/DebugTools/visibility.h"
 
 #ifndef MAGNUM_TARGET_WEBGL

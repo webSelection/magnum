@@ -32,7 +32,7 @@
 #include <memory>
 #include <utility>
 
-#include "Magnum/Magnum.h"
+#include "Magnum/GL/GL.h"
 #include "Magnum/MeshTools/visibility.h"
 
 namespace Magnum { namespace MeshTools {

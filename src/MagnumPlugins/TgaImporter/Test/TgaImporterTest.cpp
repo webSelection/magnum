@@ -29,7 +29,7 @@
 #include <Corrade/TestSuite/Compare/Container.h>
 #include <Corrade/Utility/Directory.h>
 
-#include "Magnum/PixelFormat.h"
+#include "Magnum/GL/PixelFormat.h"
 #include "Magnum/Trade/ImageData.h"
 #include "MagnumPlugins/TgaImporter/TgaImporter.h"
 

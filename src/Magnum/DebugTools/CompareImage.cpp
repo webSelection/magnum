@@ -29,8 +29,8 @@
 #include <sstream>
 #include <vector>
 
-#include "Magnum/ImageView.h"
-#include "Magnum/PixelFormat.h"
+#include "Magnum/GL/ImageView.h"
+#include "Magnum/GL/PixelFormat.h"
 #include "Magnum/Math/Functions.h"
 #include "Magnum/Math/Color.h"
 #include "Magnum/Math/Algorithms/KahanSum.h"

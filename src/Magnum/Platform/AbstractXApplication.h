@@ -41,7 +41,8 @@
 #undef Status
 
 #include "Magnum/Magnum.h"
-#include "Magnum/Tags.h"
+#include "Magnum/GL/GL.h"
+#include "Magnum/GL/Tags.h"
 #include "Magnum/Math/Vector2.h"
 #include "Magnum/Platform/Platform.h"
 

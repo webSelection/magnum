@@ -30,6 +30,7 @@
  */
 
 #include "Magnum/Resource.h"
+#include "Magnum/GL/GL.h"
 #include "Magnum/Math/Color.h"
 #include "Magnum/SceneGraph/Drawable.h"
 #include "Magnum/Shaders/Shaders.h"

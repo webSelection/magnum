@@ -42,7 +42,7 @@ set(TgaImageConverter_HEADERS
 add_library(TgaImageConverterObjects OBJECT
     ${TgaImageConverter_SRCS}
     ${TgaImageConverter_HEADERS})
-target_include_directories(TgaImageConverterObjects PUBLIC $<TARGET_PROPERTY:Magnum,INTERFACE_INCLUDE_DIRECTORIES>)
+target_include_directories(TgaImageConverterObjects PUBLIC $<TARGET_PROPERTY:MagnumGL,INTERFACE_INCLUDE_DIRECTORIES>)
 if(NOT BUILD_PLUGINS_STATIC)
     target_compile_definitions(TgaImageConverterObjects PRIVATE "TgaImageConverterObjects_EXPORTS")
 endif()

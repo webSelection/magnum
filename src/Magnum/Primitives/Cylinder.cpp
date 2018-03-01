@@ -25,7 +25,7 @@
 
 #include "Cylinder.h"
 
-#include "Magnum/Mesh.h"
+#include "Magnum/GL/Mesh.h"
 #include "Magnum/Math/Color.h"
 #include "Magnum/Primitives/Implementation/Spheroid.h"
 #include "Magnum/Primitives/Implementation/WireframeSpheroid.h"

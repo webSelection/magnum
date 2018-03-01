@@ -33,14 +33,14 @@
 
 #include <memory>
 
-#include "Magnum/OpenGL.h"
 #include "Magnum/Tags.h"
+#include "Magnum/Magnum.h"
+#include "Magnum/GL/OpenGL.h"
+#include "Magnum/Platform/Platform.h"
+
 #include <OpenGL/OpenGL.h>
 #include <OpenGL/CGLTypes.h>
 #include <OpenGL/CGLCurrent.h>
-
-#include "Magnum/Magnum.h"
-#include "Magnum/Platform/Platform.h"
 
 namespace Magnum { namespace Platform {
 

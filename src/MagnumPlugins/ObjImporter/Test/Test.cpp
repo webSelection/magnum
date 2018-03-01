@@ -27,7 +27,7 @@
 #include <Corrade/TestSuite/Tester.h>
 #include <Corrade/Utility/Directory.h>
 
-#include "Magnum/Mesh.h"
+#include "Magnum/GL/Mesh.h"
 #include "Magnum/Math/Vector3.h"
 #include "Magnum/Trade/MeshData3D.h"
 #include "MagnumPlugins/ObjImporter/ObjImporter.h"

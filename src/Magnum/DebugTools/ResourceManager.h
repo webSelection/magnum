@@ -34,18 +34,19 @@
 #include "Magnum/Magnum.h"
 #include "Magnum/DebugTools/DebugTools.h"
 #include "Magnum/DebugTools/visibility.h"
+#include "Magnum/GL/GL.h"
 #include "Magnum/SceneGraph/SceneGraph.h"
 #include "Magnum/Shapes/Shapes.h"
 
 /** @todo fix this better */
 #ifdef CORRADE_MSVC2017_COMPATIBILITY
-#include "Magnum/AbstractShaderProgram.h"
-#include "Magnum/Buffer.h"
-#include "Magnum/Mesh.h"
-#include "Magnum/MeshView.h"
 #include "Magnum/DebugTools/ForceRenderer.h"
 #include "Magnum/DebugTools/ObjectRenderer.h"
 #include "Magnum/DebugTools/ShapeRenderer.h"
+#include "Magnum/GL/AbstractShaderProgram.h"
+#include "Magnum/GL/Buffer.h"
+#include "Magnum/GL/Mesh.h"
+#include "Magnum/GL/MeshView.h"
 #endif
 
 namespace Magnum {

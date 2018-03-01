@@ -26,9 +26,9 @@
 #include <Corrade/Containers/Array.h>
 #include <Corrade/TestSuite/Compare/Container.h>
 
-#include "Magnum/Context.h"
-#include "Magnum/Extensions.h"
-#include "Magnum/OpenGLTester.h"
+#include "Magnum/GL/Context.h"
+#include "Magnum/GL/Extensions.h"
+#include "Magnum/GL/OpenGLTester.h"
 #include "Magnum/Text/AbstractFont.h"
 #include "Magnum/Text/Renderer.h"
 

@@ -31,7 +31,7 @@
 
 #include <Corrade/Containers/Array.h>
 
-#include "Magnum/ImageView.h"
+#include "Magnum/GL/ImageView.h"
 #include "Magnum/Trade/visibility.h"
 
 namespace Magnum { namespace Trade {

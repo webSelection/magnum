@@ -25,8 +25,8 @@
 
 #include <Corrade/TestSuite/Compare/Container.h>
 
-#include "Magnum/OpenGLTester.h"
 #include "Magnum/DebugTools/BufferData.h"
+#include "Magnum/GL/OpenGLTester.h"
 
 namespace Magnum { namespace DebugTools { namespace Test {
 

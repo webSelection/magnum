@@ -28,11 +28,11 @@
 #include <Corrade/PluginManager/Manager.h>
 
 #include "Magnum/Math/Range.h"
-#include "Magnum/Image.h"
-#include "Magnum/PixelFormat.h"
-#include "Magnum/Renderer.h"
-#include "Magnum/Texture.h"
-#include "Magnum/TextureFormat.h"
+#include "Magnum/GL/Image.h"
+#include "Magnum/GL/PixelFormat.h"
+#include "Magnum/GL/Renderer.h"
+#include "Magnum/GL/Texture.h"
+#include "Magnum/GL/TextureFormat.h"
 #include "Magnum/TextureTools/DistanceField.h"
 #include "Magnum/Trade/AbstractImporter.h"
 #include "Magnum/Trade/AbstractImageConverter.h"

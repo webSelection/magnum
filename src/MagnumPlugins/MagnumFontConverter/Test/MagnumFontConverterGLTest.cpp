@@ -26,11 +26,11 @@
 #include <Corrade/Utility/Directory.h>
 #include <Corrade/TestSuite/Compare/File.h>
 
-#include "Magnum/Context.h"
-#include "Magnum/Extensions.h"
-#include "Magnum/PixelFormat.h"
-#include "Magnum/TextureFormat.h"
-#include "Magnum/OpenGLTester.h"
+#include "Magnum/GL/Context.h"
+#include "Magnum/GL/Extensions.h"
+#include "Magnum/GL/PixelFormat.h"
+#include "Magnum/GL/TextureFormat.h"
+#include "Magnum/GL/OpenGLTester.h"
 #include "Magnum/Text/GlyphCache.h"
 #include "Magnum/Text/AbstractFont.h"
 #include "Magnum/Trade/ImageData.h"

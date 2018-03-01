@@ -29,7 +29,7 @@
 #include <Corrade/Utility/Assert.h>
 #include <Corrade/Utility/Debug.h>
 
-#include "Magnum/Version.h"
+#include "Magnum/GL/Version.h"
 #include "Magnum/Platform/Context.h"
 
 /* Saner way to define the None Xlib macro (anyway, FUCK YOU XLIB) */

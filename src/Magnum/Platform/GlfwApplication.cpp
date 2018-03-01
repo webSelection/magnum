@@ -30,7 +30,7 @@
 #include <Corrade/Utility/String.h>
 #include <Corrade/Utility/Unicode.h>
 
-#include "Magnum/Version.h"
+#include "Magnum/GL/Version.h"
 #include "Magnum/Platform/Context.h"
 #include "Magnum/Platform/ScreenedApplication.hpp"
 

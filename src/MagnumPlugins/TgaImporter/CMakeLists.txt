@@ -46,7 +46,7 @@ add_library(TgaImporterObjects OBJECT
     ${TgaImporter_SRCS}
     ${TgaImporter_HEADERS}
     ${TgaImporter_PRIVATE_HEADERS})
-target_include_directories(TgaImporterObjects PUBLIC $<TARGET_PROPERTY:Magnum,INTERFACE_INCLUDE_DIRECTORIES>)
+target_include_directories(TgaImporterObjects PUBLIC $<TARGET_PROPERTY:MagnumGL,INTERFACE_INCLUDE_DIRECTORIES>)
 if(NOT BUILD_PLUGINS_STATIC)
     target_compile_definitions(TgaImporterObjects PRIVATE "TgaImporterObjects_EXPORTS")
 endif()

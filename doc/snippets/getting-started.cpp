@@ -24,7 +24,7 @@
 */
 
 /** [0] */
-#include <Magnum/DefaultFramebuffer.h>
+#include <Magnum/GL/DefaultFramebuffer.h>
 #include <Magnum/Platform/Sdl2Application.h>
 
 using namespace Magnum;

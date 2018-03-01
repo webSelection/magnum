@@ -25,10 +25,10 @@
 
 #include "GlyphCache.h"
 
-#include "Magnum/Context.h"
-#include "Magnum/Extensions.h"
-#include "Magnum/Image.h"
-#include "Magnum/TextureFormat.h"
+#include "Magnum/GL/Context.h"
+#include "Magnum/GL/Extensions.h"
+#include "Magnum/GL/Image.h"
+#include "Magnum/GL/TextureFormat.h"
 #include "Magnum/TextureTools/Atlas.h"
 
 namespace Magnum { namespace Text {

@@ -25,10 +25,10 @@
 
 #include <numeric>
 
-#include "Magnum/Buffer.h"
-#include "Magnum/DefaultFramebuffer.h"
-#include "Magnum/Mesh.h"
-#include "Magnum/Texture.h"
+#include "Magnum/GL/Buffer.h"
+#include "Magnum/GL/DefaultFramebuffer.h"
+#include "Magnum/GL/Mesh.h"
+#include "Magnum/GL/Texture.h"
 #include "Magnum/Math/Color.h"
 #include "Magnum/MeshTools/Duplicate.h"
 #include "Magnum/Shaders/DistanceFieldVector.h"

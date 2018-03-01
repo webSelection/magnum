@@ -25,7 +25,7 @@
 
 #include <tuple>
 
-#include "Magnum/OpenGLTester.h"
+#include "Magnum/GL/OpenGLTester.h"
 #include "Magnum/Text/GlyphCache.h"
 
 namespace Magnum { namespace Text { namespace Test {

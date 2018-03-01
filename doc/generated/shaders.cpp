@@ -36,16 +36,16 @@
 #error no windowless application available on this platform
 #endif
 
-#include <Magnum/Buffer.h>
-#include <Magnum/Framebuffer.h>
-#include <Magnum/Image.h>
-#include <Magnum/Mesh.h>
-#include <Magnum/PixelFormat.h>
-#include <Magnum/Renderbuffer.h>
-#include <Magnum/RenderbufferFormat.h>
-#include <Magnum/Renderer.h>
-#include <Magnum/Texture.h>
-#include <Magnum/TextureFormat.h>
+#include <Magnum/GL/Buffer.h>
+#include <Magnum/GL/Framebuffer.h>
+#include <Magnum/GL/Image.h>
+#include <Magnum/GL/Mesh.h>
+#include <Magnum/GL/PixelFormat.h>
+#include <Magnum/GL/Renderbuffer.h>
+#include <Magnum/GL/RenderbufferFormat.h>
+#include <Magnum/GL/Renderer.h>
+#include <Magnum/GL/Texture.h>
+#include <Magnum/GL/TextureFormat.h>
 #include <Magnum/MeshTools/Compile.h>
 #include <Magnum/MeshTools/Interleave.h>
 #include <Magnum/Primitives/Square.h>

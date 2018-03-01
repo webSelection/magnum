@@ -29,11 +29,11 @@
  * @brief Function @ref Magnum::TextureTools::distanceField()
  */
 
+#include "Magnum/Magnum.h"
+#include "Magnum/GL/GL.h"
 #ifndef MAGNUM_TARGET_GLES
 #include "Magnum/Math/Vector2.h"
 #endif
-#include "Magnum/Magnum.h"
-
 #include "Magnum/TextureTools/visibility.h"
 
 namespace Magnum { namespace TextureTools {

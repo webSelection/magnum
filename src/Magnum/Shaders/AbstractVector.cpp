@@ -25,7 +25,7 @@
 
 #include "AbstractVector.h"
 
-#include "Magnum/Texture.h"
+#include "Magnum/GL/Texture.h"
 #include "Magnum/Shaders/visibility.h"
 
 namespace Magnum { namespace Shaders {

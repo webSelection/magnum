@@ -27,9 +27,9 @@
 
 #include <Corrade/Containers/Array.h>
 
-#include "Magnum/Context.h"
-#include "Magnum/Extensions.h"
-#include "Magnum/Mesh.h"
+#include "Magnum/GL/Context.h"
+#include "Magnum/GL/Extensions.h"
+#include "Magnum/GL/Mesh.h"
 #include "Magnum/Math/Functions.h"
 #include "Magnum/Shaders/AbstractVector.h"
 #include "Magnum/Text/AbstractFont.h"

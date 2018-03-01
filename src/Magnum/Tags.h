@@ -26,32 +26,20 @@
 */
 
 /** @file
- * @brief Tag type @ref Magnum::NoCreateT, tag @ref Magnum::NoCreate
+ * @deprecated Use @ref Magnum/GL/Tags.h instead.
  */
 
-namespace Magnum {
+#include "Magnum/configure.h"
 
-/**
-@brief No creation tag type
+#ifdef MAGNUM_BUILD_DEPRECATED
+#include <Corrade/Utility/Macros.h>
 
-Used to distinguish construction without creating the underlying OpenGL object.
-@see @ref NoCreate
-*/
-/* Explicit constructor to avoid ambiguous calls when using {} */
-struct NoCreateT {
-    #ifndef DOXYGEN_GENERATING_OUTPUT
-    struct Init{};
-    constexpr explicit NoCreateT(Init) {}
-    #endif
-};
+#include "Magnum/Magnum.h"
+#include "Magnum/GL/Tags.h"
 
-/**
-@brief No creation tag
-
-Use for construction without creating the underlying OpenGL object.
-*/
-constexpr NoCreateT NoCreate{NoCreateT::Init{}};
-
-}
+CORRADE_DEPRECATED_FILE("use Magnum/GL/Tags.h instead")
+#else
+#error use Magnum/GL/Tags.h instead
+#endif
 
 #endif

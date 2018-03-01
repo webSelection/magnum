@@ -26,34 +26,34 @@
 #include <Corrade/Utility/Arguments.h>
 #include <Corrade/Utility/Debug.h>
 
-#include "Magnum/AbstractShaderProgram.h"
-#include "Magnum/Buffer.h"
+#include "Magnum/GL/AbstractShaderProgram.h"
+#include "Magnum/GL/Buffer.h"
 #if !defined(MAGNUM_TARGET_GLES2) && !defined(MAGNUM_TARGET_WEBGL)
-#include "Magnum/BufferTexture.h"
+#include "Magnum/GL/BufferTexture.h"
 #endif
-#include "Magnum/Context.h"
-#include "Magnum/CubeMapTexture.h"
+#include "Magnum/GL/Context.h"
+#include "Magnum/GL/CubeMapTexture.h"
 #if !defined(MAGNUM_TARGET_GLES2) && !defined(MAGNUM_TARGET_WEBGL)
-#include "Magnum/CubeMapTextureArray.h"
+#include "Magnum/GL/CubeMapTextureArray.h"
 #endif
 #ifndef MAGNUM_TARGET_WEBGL
-#include "Magnum/DebugOutput.h"
+#include "Magnum/GL/DebugOutput.h"
 #endif
-#include "Magnum/Extensions.h"
-#include "Magnum/Framebuffer.h"
-#include "Magnum/Mesh.h"
+#include "Magnum/GL/Extensions.h"
+#include "Magnum/GL/Framebuffer.h"
+#include "Magnum/GL/Mesh.h"
 #if !defined(MAGNUM_TARGET_GLES2) && !defined(MAGNUM_TARGET_WEBGL)
-#include "Magnum/MultisampleTexture.h"
+#include "Magnum/GL/MultisampleTexture.h"
 #endif
 #ifndef MAGNUM_TARGET_GLES
-#include "Magnum/RectangleTexture.h"
+#include "Magnum/GL/RectangleTexture.h"
 #endif
-#include "Magnum/Renderbuffer.h"
-#include "Magnum/Shader.h"
-#include "Magnum/Texture.h"
+#include "Magnum/GL/Renderbuffer.h"
+#include "Magnum/GL/Shader.h"
+#include "Magnum/GL/Texture.h"
 #ifndef MAGNUM_TARGET_GLES2
-#include "Magnum/TextureArray.h"
-#include "Magnum/TransformFeedback.h"
+#include "Magnum/GL/TextureArray.h"
+#include "Magnum/GL/TransformFeedback.h"
 #endif
 
 #if defined(MAGNUM_TARGET_HEADLESS) || defined(CORRADE_TARGET_EMSCRIPTEN)

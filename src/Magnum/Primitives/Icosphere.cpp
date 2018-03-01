@@ -25,7 +25,7 @@
 
 #include "Icosphere.h"
 
-#include "Magnum/Mesh.h"
+#include "Magnum/GL/Mesh.h"
 #include "Magnum/Math/Color.h"
 #include "Magnum/MeshTools/Duplicate.h"
 #include "Magnum/MeshTools/RemoveDuplicates.h"

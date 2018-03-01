@@ -35,12 +35,13 @@
 #include <Corrade/Containers/ArrayView.h>
 
 #include "Magnum/Magnum.h"
-#include "Magnum/Tags.h"
+#include "Magnum/GL/GL.h"
+#include "Magnum/GL/Tags.h"
 #include "Magnum/Math/Vector2.h"
 #include "Magnum/Platform/Platform.h"
 
 /* We must include our own GL headers first to avoid conflicts */
-#include "Magnum/OpenGL.h"
+#include "Magnum/GL/OpenGL.h"
 
 #include <GLFW/glfw3.h>
 

@@ -40,8 +40,8 @@
 #undef Status
 
 #include "Magnum/Magnum.h"
-#include "Magnum/OpenGL.h"
-#include "Magnum/Tags.h"
+#include "Magnum/GL/OpenGL.h"
+#include "Magnum/GL/Tags.h"
 #include "Magnum/Platform/Platform.h"
 
 namespace Magnum { namespace Platform {

@@ -27,12 +27,12 @@
 
 #include <Corrade/Utility/Resource.h>
 
-#include "Magnum/Context.h"
-#include "Magnum/Extensions.h"
-#include "Magnum/Shader.h"
-#include "Magnum/Texture.h"
+#include "Magnum/GL/Context.h"
+#include "Magnum/GL/Extensions.h"
+#include "Magnum/GL/Shader.h"
+#include "Magnum/GL/Texture.h"
 
-#include "Implementation/CreateCompatibilityShader.h"
+#include "Magnum/Shaders/Implementation/CreateCompatibilityShader.h"
 
 namespace Magnum { namespace Shaders {
 

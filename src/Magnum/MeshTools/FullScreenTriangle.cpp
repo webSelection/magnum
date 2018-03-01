@@ -25,11 +25,11 @@
 
 #include "FullScreenTriangle.h"
 
-#include "Magnum/Attribute.h"
-#include "Magnum/Buffer.h"
-#include "Magnum/Context.h"
-#include "Magnum/Mesh.h"
-#include "Magnum/Version.h"
+#include "Magnum/GL/Attribute.h"
+#include "Magnum/GL/Buffer.h"
+#include "Magnum/GL/Context.h"
+#include "Magnum/GL/Mesh.h"
+#include "Magnum/GL/Version.h"
 #include "Magnum/Math/Vector2.h"
 
 namespace Magnum { namespace MeshTools {

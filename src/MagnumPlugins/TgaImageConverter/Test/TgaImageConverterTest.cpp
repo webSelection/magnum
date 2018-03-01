@@ -30,8 +30,8 @@
 #include <Corrade/TestSuite/Compare/Container.h>
 #include <Corrade/Utility/Directory.h>
 
-#include "Magnum/Image.h"
-#include "Magnum/PixelFormat.h"
+#include "Magnum/GL/Image.h"
+#include "Magnum/GL/PixelFormat.h"
 #include "Magnum/Trade/ImageData.h"
 #include "MagnumPlugins/TgaImageConverter/TgaImageConverter.h"
 #include "MagnumPlugins/TgaImporter/TgaImporter.h"

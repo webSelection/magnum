@@ -32,7 +32,12 @@
 #include <memory>
 #include <Corrade/Containers/EnumSet.h>
 
-#include "Magnum/OpenGL.h"
+/* Include our GL headers first to avoid conflicts */
+#include "Magnum/Magnum.h"
+#include "Magnum/GL/OpenGL.h"
+#include "Magnum/GL/Tags.h"
+#include "Magnum/Platform/Platform.h"
+
 #include <GL/glx.h>
 #include <X11/Xlib.h>
 #include <X11/Xutil.h>
@@ -42,9 +47,6 @@
 #undef None
 #undef Status
 
-#include "Magnum/Magnum.h"
-#include "Magnum/Tags.h"
-#include "Magnum/Platform/Platform.h"
 
 namespace Magnum { namespace Platform {
 
