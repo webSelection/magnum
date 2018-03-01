@@ -25,7 +25,7 @@
 
 #include "Compile.h"
 
-#include "Magnum/Buffer.h"
+#include "Magnum/GL/Buffer.h"
 #include "Magnum/Math/Vector3.h"
 #include "Magnum/MeshTools/CompressIndices.h"
 #include "Magnum/MeshTools/Interleave.h"

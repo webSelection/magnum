@@ -29,8 +29,8 @@
 #include <Corrade/Containers/Array.h>
 #include <Corrade/Utility/Directory.h>
 
-#include "Magnum/Image.h"
-#include "Magnum/PixelFormat.h"
+#include "Magnum/GL/Image.h"
+#include "Magnum/GL/PixelFormat.h"
 #include "Magnum/Text/GlyphCache.h"
 #include "Magnum/Text/AbstractFont.h"
 #include "MagnumPlugins/TgaImageConverter/TgaImageConverter.h"

@@ -27,7 +27,7 @@
 #include <Corrade/TestSuite/Tester.h>
 #include <Corrade/Utility/Directory.h>
 
-#include "Magnum/Image.h"
+#include "Magnum/GL/Image.h"
 #include "Magnum/Trade/ImageData.h"
 #include "Magnum/Trade/AbstractImporter.h"
 #include "Magnum/DebugTools/CompareImage.h"

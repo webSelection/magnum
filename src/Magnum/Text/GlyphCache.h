@@ -33,7 +33,7 @@
 #include <unordered_map>
 
 #include "Magnum/Math/Range.h"
-#include "Magnum/Texture.h"
+#include "Magnum/GL/Texture.h"
 #include "Magnum/Text/visibility.h"
 
 namespace Magnum { namespace Text {

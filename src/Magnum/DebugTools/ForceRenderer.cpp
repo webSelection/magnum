@@ -25,13 +25,13 @@
 
 #include "ForceRenderer.h"
 
-#include "Magnum/Buffer.h"
-#include "Magnum/Mesh.h"
+#include "Magnum/GL/Buffer.h"
+#include "Magnum/GL/Mesh.h"
 #include "Magnum/DebugTools/ResourceManager.h"
 #include "Magnum/SceneGraph/Camera.h"
 #include "Magnum/Shaders/Flat.h"
 
-#include "Implementation/ForceRendererTransformation.h"
+#include "Magnum/DebugTools/Implementation/ForceRendererTransformation.h"
 
 namespace Magnum { namespace DebugTools {
 

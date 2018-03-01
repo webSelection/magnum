@@ -28,6 +28,7 @@
 #include "Magnum/DimensionTraits.h"
 #include "Magnum/Resource.h"
 #include "Magnum/DebugTools/DebugTools.h"
+#include "Magnum/GL/GL.h"
 #include "Magnum/SceneGraph/SceneGraph.h"
 #include "Magnum/Shaders/Shaders.h"
 #include "Magnum/Trade/Trade.h"

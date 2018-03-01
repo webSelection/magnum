@@ -30,9 +30,10 @@
  */
 
 #include "Magnum/Resource.h"
+#include "Magnum/DebugTools/visibility.h"
+#include "Magnum/GL/GL.h"
 #include "Magnum/SceneGraph/Drawable.h"
 #include "Magnum/Shaders/Shaders.h"
-#include "Magnum/DebugTools/visibility.h"
 
 namespace Magnum { namespace DebugTools {
 

@@ -28,14 +28,14 @@
 #include <Corrade/Utility/Resource.h>
 
 #include "Magnum/Math/Range.h"
-#include "Magnum/AbstractShaderProgram.h"
-#include "Magnum/Buffer.h"
-#include "Magnum/Context.h"
-#include "Magnum/Extensions.h"
-#include "Magnum/Framebuffer.h"
-#include "Magnum/Mesh.h"
-#include "Magnum/Shader.h"
-#include "Magnum/Texture.h"
+#include "Magnum/GL/AbstractShaderProgram.h"
+#include "Magnum/GL/Buffer.h"
+#include "Magnum/GL/Context.h"
+#include "Magnum/GL/Extensions.h"
+#include "Magnum/GL/Framebuffer.h"
+#include "Magnum/GL/Mesh.h"
+#include "Magnum/GL/Shader.h"
+#include "Magnum/GL/Texture.h"
 #include "Magnum/Shaders/Implementation/CreateCompatibilityShader.h"
 
 #ifdef MAGNUM_BUILD_STATIC

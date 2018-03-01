@@ -23,7 +23,7 @@
     DEALINGS IN THE SOFTWARE.
 */
 
-#include "Magnum/Buffer.h"
+#include "Magnum/GL/Buffer.h"
 #include "Magnum/Math/Color.h"
 #include "Magnum/MeshTools/CombineIndexedArrays.h"
 #include "Magnum/MeshTools/CompressIndices.h"

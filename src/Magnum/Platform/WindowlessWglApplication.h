@@ -38,8 +38,8 @@
 #include <Corrade/Containers/EnumSet.h>
 
 #include "Magnum/Magnum.h"
-#include "Magnum/OpenGL.h"
 #include "Magnum/Tags.h"
+#include "Magnum/GL/OpenGL.h"
 #include "Magnum/Platform/Platform.h"
 
 #ifndef DOXYGEN_GENERATING_OUTPUT

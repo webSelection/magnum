@@ -26,6 +26,7 @@
 #include <Corrade/TestSuite/Tester.h>
 #include <Corrade/TestSuite/Compare/Container.h>
 
+#include "Magnum/Magnum.h"
 #include "Magnum/Math/Vector3.h"
 #include "Magnum/Trade/MeshData2D.h"
 #include "Magnum/Trade/MeshData3D.h"

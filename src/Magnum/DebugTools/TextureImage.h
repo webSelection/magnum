@@ -31,6 +31,7 @@
 
 #include "Magnum/Magnum.h"
 #include "Magnum/DebugTools/visibility.h"
+#include "Magnum/GL/GL.h"
 
 namespace Magnum { namespace DebugTools {
 

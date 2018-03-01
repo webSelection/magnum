@@ -25,9 +25,9 @@
 
 #include "Capsule.h"
 
+#include "Magnum/GL/Mesh.h"
 #include "Magnum/Math/Color.h"
 #include "Magnum/Math/Functions.h"
-#include "Magnum/Mesh.h"
 #include "Magnum/Primitives/Implementation/Spheroid.h"
 #include "Magnum/Primitives/Implementation/WireframeSpheroid.h"
 #include "Magnum/Trade/MeshData2D.h"

@@ -25,18 +25,18 @@
 
 #include <Corrade/TestSuite/Compare/Container.h>
 
-#include "Magnum/CubeMapTexture.h"
-#include "Magnum/Image.h"
-#include "Magnum/OpenGLTester.h"
-#include "Magnum/PixelFormat.h"
-#include "Magnum/Texture.h"
-#include "Magnum/TextureFormat.h"
 #include "Magnum/DebugTools/BufferData.h"
 #include "Magnum/DebugTools/TextureImage.h"
+#include "Magnum/GL/CubeMapTexture.h"
+#include "Magnum/GL/Image.h"
+#include "Magnum/GL/OpenGLTester.h"
+#include "Magnum/GL/PixelFormat.h"
+#include "Magnum/GL/Texture.h"
+#include "Magnum/GL/TextureFormat.h"
 #include "Magnum/Math/Range.h"
 
 #ifndef MAGNUM_TARGET_GLES2
-#include "Magnum/BufferImage.h"
+#include "Magnum/GL/BufferImage.h"
 #endif
 
 namespace Magnum { namespace DebugTools { namespace Test {

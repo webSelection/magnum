@@ -32,7 +32,7 @@
 #include <tuple>
 #include <memory>
 
-#include "Magnum/Magnum.h"
+#include "Magnum/GL/GL.h"
 #include "Magnum/Trade/Trade.h"
 #include "Magnum/MeshTools/visibility.h"
 

@@ -25,7 +25,7 @@
 
 #include <Corrade/TestSuite/Tester.h>
 
-#include "Magnum/Mesh.h"
+#include "Magnum/GL/Mesh.h"
 #include "Magnum/Math/Vector2.h"
 #include "Magnum/Primitives/Circle.h"
 #include "Magnum/Trade/MeshData2D.h"

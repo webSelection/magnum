@@ -31,7 +31,7 @@
 #include <Corrade/Utility/Endianness.h>
 #include <Corrade/Containers/ArrayView.h>
 
-#include "Magnum/PixelFormat.h"
+#include "Magnum/GL/PixelFormat.h"
 #include "Magnum/Math/Swizzle.h"
 #include "Magnum/Math/Vector4.h"
 #include "Magnum/Trade/ImageData.h"

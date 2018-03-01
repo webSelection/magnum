@@ -91,7 +91,7 @@ if(WITH_ANDROIDAPPLICATION)
         FOLDER "Magnum/Platform")
     # Assuming that PIC is not needed because the Application lib is always
     # linked to the executable and not to any intermediate shared lib
-    target_link_libraries(MagnumAndroidApplication Magnum)
+    target_link_libraries(MagnumAndroidApplication PUBLIC MagnumGL)
 
     install(FILES ${MagnumAndroidApplication_HEADERS} DESTINATION ${MAGNUM_INCLUDE_INSTALL_DIR}/Platform)
     install(TARGETS MagnumAndroidApplication
@@ -123,7 +123,7 @@ if(WITH_GLFWAPPLICATION)
         FOLDER "Magnum/Platform")
     # Assuming that PIC is not needed because the Application lib is always
     # linked to the executable and not to any intermediate shared lib
-    target_link_libraries(MagnumGlfwApplication Magnum GLFW::GLFW)
+    target_link_libraries(MagnumGlfwApplication PUBLIC MagnumGL GLFW::GLFW)
 
     install(FILES ${MagnumGlfwApplication_HEADERS} DESTINATION ${MAGNUM_INCLUDE_INSTALL_DIR}/Platform)
     install(TARGETS MagnumGlfwApplication
@@ -156,7 +156,7 @@ if(WITH_GLUTAPPLICATION)
     # Assuming that PIC is not needed because the Application lib is always
     # linked to the executable and not to any intermediate shared lib
     target_include_directories(MagnumGlutApplication PUBLIC ${GLUT_INCLUDE_DIR})
-    target_link_libraries(MagnumGlutApplication Magnum ${GLUT_glut_LIBRARY})
+    target_link_libraries(MagnumGlutApplication PUBLIC MagnumGL ${GLUT_glut_LIBRARY})
 
     install(FILES ${MagnumGlutApplication_HEADERS} DESTINATION ${MAGNUM_INCLUDE_INSTALL_DIR}/Platform)
     install(TARGETS MagnumGlutApplication
@@ -188,7 +188,7 @@ if(WITH_SDL2APPLICATION)
         FOLDER "Magnum/Platform")
     # Assuming that PIC is not needed because the Application lib is always
     # linked to the executable and not to any intermediate shared lib
-    target_link_libraries(MagnumSdl2Application Magnum SDL2::SDL2)
+    target_link_libraries(MagnumSdl2Application PUBLIC MagnumGL SDL2::SDL2)
 
     install(FILES ${MagnumSdl2Application_HEADERS} DESTINATION ${MAGNUM_INCLUDE_INSTALL_DIR}/Platform)
     install(TARGETS MagnumSdl2Application
@@ -238,7 +238,7 @@ if(WITH_GLXAPPLICATION)
     # Assuming that PIC is not needed because the Application lib is always
     # linked to the executable and not to any intermediate shared lib
     target_include_directories(MagnumGlxApplication PUBLIC ${X11_INCLUDE_DIR})
-    target_link_libraries(MagnumGlxApplication Magnum ${X11_LIBRARIES})
+    target_link_libraries(MagnumGlxApplication PUBLIC MagnumGL ${X11_LIBRARIES})
 
     install(FILES ${MagnumGlxApplication_HEADERS} DESTINATION ${MAGNUM_INCLUDE_INSTALL_DIR}/Platform)
     install(TARGETS MagnumGlxApplication
@@ -272,7 +272,7 @@ if(WITH_XEGLAPPLICATION)
     # Assuming that PIC is not needed because the Application lib is always
     # linked to the executable and not to any intermediate shared lib
     target_include_directories(MagnumXEglApplication PUBLIC ${X11_INCLUDE_DIR})
-    target_link_libraries(MagnumXEglApplication Magnum ${X11_LIBRARIES})
+    target_link_libraries(MagnumXEglApplication PUBLIC MagnumGL ${X11_LIBRARIES})
 
     install(FILES ${MagnumXEglApplication_HEADERS} DESTINATION ${MAGNUM_INCLUDE_INSTALL_DIR}/Platform)
     install(TARGETS MagnumXEglApplication
@@ -314,7 +314,7 @@ if(WITH_WINDOWLESSEGLAPPLICATION)
     if(BUILD_STATIC_PIC)
         set_target_properties(MagnumWindowlessEglApplication PROPERTIES POSITION_INDEPENDENT_CODE ON)
     endif()
-    target_link_libraries(MagnumWindowlessEglApplication Magnum EGL::EGL)
+    target_link_libraries(MagnumWindowlessEglApplication PUBLIC MagnumGL EGL::EGL)
 
     install(FILES ${MagnumWindowlessEglApplication_HEADERS} DESTINATION ${MAGNUM_INCLUDE_INSTALL_DIR}/Platform)
     install(TARGETS MagnumWindowlessEglApplication
@@ -347,7 +347,7 @@ if(WITH_WINDOWLESSGLXAPPLICATION)
         set_target_properties(MagnumWindowlessGlxApplication PROPERTIES POSITION_INDEPENDENT_CODE ON)
     endif()
     target_include_directories(MagnumWindowlessGlxApplication PUBLIC ${X11_INCLUDE_DIR})
-    target_link_libraries(MagnumWindowlessGlxApplication Magnum ${X11_LIBRARIES})
+    target_link_libraries(MagnumWindowlessGlxApplication PUBLIC MagnumGL ${X11_LIBRARIES})
 
     install(FILES ${MagnumWindowlessGlxApplication_HEADERS} DESTINATION ${MAGNUM_INCLUDE_INSTALL_DIR}/Platform)
     install(TARGETS MagnumWindowlessGlxApplication
@@ -383,7 +383,7 @@ if(WITH_WINDOWLESSIOSAPPLICATION)
         set_target_properties(MagnumWindowlessIosApplication PROPERTIES POSITION_INDEPENDENT_CODE ON)
     endif()
     target_link_libraries(MagnumWindowlessIosApplication
-        Magnum
+        MagnumGL
         EGL::EGL
         ${_MAGNUM_IOS_FOUNDATION_FRAMEWORK_LIBRARY})
 
@@ -416,7 +416,7 @@ if(WITH_WINDOWLESSWGLAPPLICATION)
     if(BUILD_STATIC_PIC)
         set_target_properties(MagnumWindowlessWglApplication PROPERTIES POSITION_INDEPENDENT_CODE ON)
     endif()
-    target_link_libraries(MagnumWindowlessWglApplication Magnum)
+    target_link_libraries(MagnumWindowlessWglApplication PUBLIC MagnumGL)
 
     install(FILES ${MagnumWindowlessWglApplication_HEADERS} DESTINATION ${MAGNUM_INCLUDE_INSTALL_DIR}/Platform)
     install(TARGETS MagnumWindowlessWglApplication
@@ -451,7 +451,7 @@ if(WITH_WINDOWLESSWINDOWSEGLAPPLICATION)
     if(BUILD_STATIC_PIC)
         set_target_properties(MagnumWindowlessWindowsEglApplication PROPERTIES POSITION_INDEPENDENT_CODE ON)
     endif()
-    target_link_libraries(MagnumWindowlessWindowsEglApplication Magnum EGL::EGL)
+    target_link_libraries(MagnumWindowlessWindowsEglApplication PUBLIC MagnumGL EGL::EGL)
 
     install(FILES ${MagnumWindowlessWindowsEglApplication_HEADERS} DESTINATION ${MAGNUM_INCLUDE_INSTALL_DIR}/Platform)
     install(TARGETS MagnumWindowlessWindowsEglApplication
@@ -481,7 +481,7 @@ if(WITH_WINDOWLESSCGLAPPLICATION)
     if(BUILD_STATIC_PIC)
         set_target_properties(MagnumWindowlessCglApplication PROPERTIES POSITION_INDEPENDENT_CODE ON)
     endif()
-    target_link_libraries(MagnumWindowlessCglApplication Magnum)
+    target_link_libraries(MagnumWindowlessCglApplication PUBLIC MagnumGL)
 
     install(FILES ${MagnumWindowlessCglApplication_HEADERS} DESTINATION ${MAGNUM_INCLUDE_INSTALL_DIR}/Platform)
     install(TARGETS MagnumWindowlessCglApplication
@@ -501,7 +501,7 @@ if(NEED_ABSTRACTXAPPLICATION)
     add_library(MagnumAbstractXApplication OBJECT
         ${MagnumAbstractXApplication_SRCS}
         ${MagnumAbstractXApplication_HEADERS})
-    target_include_directories(MagnumAbstractXApplication PUBLIC $<TARGET_PROPERTY:Magnum,INTERFACE_INCLUDE_DIRECTORIES>)
+    target_include_directories(MagnumAbstractXApplication PUBLIC $<TARGET_PROPERTY:MagnumGL,INTERFACE_INCLUDE_DIRECTORIES>)
     # X11 macros are a mess, disable warnings for C-style casts
     target_compile_options(MagnumAbstractXApplication PRIVATE "-Wno-old-style-cast")
     # Assuming that PIC is not needed because the Application lib is always
@@ -550,7 +550,7 @@ if(NEED_EGLCONTEXTHANDLER)
         ${MagnumEglContextHandler_SRCS}
         ${MagnumEglContextHandler_PRIVATE_HEADERS})
     target_include_directories(MagnumEglContextHandler PUBLIC
-        $<TARGET_PROPERTY:Magnum,INTERFACE_INCLUDE_DIRECTORIES>
+        $<TARGET_PROPERTY:MagnumGL,INTERFACE_INCLUDE_DIRECTORIES>
         $<TARGET_PROPERTY:EGL::EGL,INTERFACE_INCLUDE_DIRECTORIES>)
     # X11 macros are a mess, disable warnings for C-style casts
     target_compile_options(MagnumEglContextHandler PRIVATE "-Wno-old-style-cast")
@@ -588,7 +588,7 @@ endif()
 # CGL context
 if(NEED_CGLCONTEXT OR WITH_CGLCONTEXT)
     add_library(MagnumCglContextObjects OBJECT ${MagnumContext_SRCS})
-    target_include_directories(MagnumCglContextObjects PUBLIC $<TARGET_PROPERTY:Magnum,INTERFACE_INCLUDE_DIRECTORIES>)
+    target_include_directories(MagnumCglContextObjects PUBLIC $<TARGET_PROPERTY:MagnumGL,INTERFACE_INCLUDE_DIRECTORIES>)
     if(BUILD_STATIC_PIC)
         set_target_properties(MagnumCglContextObjects PROPERTIES POSITION_INDEPENDENT_CODE ON)
     endif()
@@ -606,7 +606,7 @@ if(NEED_CGLCONTEXT OR WITH_CGLCONTEXT)
         if(BUILD_STATIC_PIC)
             set_target_properties(MagnumCglContext PROPERTIES POSITION_INDEPENDENT_CODE ON)
         endif()
-        target_link_libraries(MagnumCglContext Magnum)
+        target_link_libraries(MagnumCglContext PUBLIC MagnumGL)
 
         install(TARGETS MagnumCglContext
             RUNTIME DESTINATION ${MAGNUM_BINARY_INSTALL_DIR}
@@ -627,7 +627,7 @@ if(NEED_EGLCONTEXT OR WITH_EGLCONTEXT)
 
     add_library(MagnumEglContextObjects OBJECT ${MagnumContext_SRCS})
     target_include_directories(MagnumEglContextObjects PUBLIC
-        $<TARGET_PROPERTY:Magnum,INTERFACE_INCLUDE_DIRECTORIES>
+        $<TARGET_PROPERTY:MagnumGL,INTERFACE_INCLUDE_DIRECTORIES>
         $<TARGET_PROPERTY:EGL::EGL,INTERFACE_INCLUDE_DIRECTORIES>)
     target_compile_definitions(MagnumEglContextObjects PRIVATE "MAGNUM_PLATFORM_USE_EGL")
     if(BUILD_STATIC_PIC)
@@ -646,7 +646,7 @@ if(NEED_EGLCONTEXT OR WITH_EGLCONTEXT)
         if(BUILD_STATIC_PIC)
             set_target_properties(MagnumEglContext PROPERTIES POSITION_INDEPENDENT_CODE ON)
         endif()
-        target_link_libraries(MagnumEglContext Magnum EGL::EGL)
+        target_link_libraries(MagnumEglContext PUBLIC MagnumGL EGL::EGL)
 
         install(TARGETS MagnumEglContext
             RUNTIME DESTINATION ${MAGNUM_BINARY_INSTALL_DIR}
@@ -662,7 +662,7 @@ endif()
 if(NEED_GLXCONTEXT OR WITH_GLXCONTEXT)
     add_library(MagnumGlxContextObjects OBJECT ${MagnumContext_SRCS})
     target_include_directories(MagnumGlxContextObjects PUBLIC
-        $<TARGET_PROPERTY:Magnum,INTERFACE_INCLUDE_DIRECTORIES>
+        $<TARGET_PROPERTY:MagnumGL,INTERFACE_INCLUDE_DIRECTORIES>
         ${X11_INCLUDE_DIR})
     target_compile_definitions(MagnumGlxContextObjects PRIVATE "MAGNUM_PLATFORM_USE_GLX")
     if(BUILD_STATIC_PIC)
@@ -680,7 +680,7 @@ if(NEED_GLXCONTEXT OR WITH_GLXCONTEXT)
             set_target_properties(MagnumGlxContext PROPERTIES POSITION_INDEPENDENT_CODE ON)
         endif()
         target_include_directories(MagnumGlxContext PUBLIC ${X11_INCLUDE_DIR})
-        target_link_libraries(MagnumGlxContext Magnum ${X11_LIBRARIES})
+        target_link_libraries(MagnumGlxContext PUBLIC MagnumGL ${X11_LIBRARIES})
 
         install(TARGETS MagnumGlxContext
             RUNTIME DESTINATION ${MAGNUM_BINARY_INSTALL_DIR}
@@ -695,7 +695,7 @@ endif()
 # WGL context
 if(NEED_WGLCONTEXT OR WITH_WGLCONTEXT)
     add_library(MagnumWglContextObjects OBJECT ${MagnumContext_SRCS})
-    target_include_directories(MagnumWglContextObjects PUBLIC $<TARGET_PROPERTY:Magnum,INTERFACE_INCLUDE_DIRECTORIES>)
+    target_include_directories(MagnumWglContextObjects PUBLIC $<TARGET_PROPERTY:MagnumGL,INTERFACE_INCLUDE_DIRECTORIES>)
     if(BUILD_STATIC_PIC)
         set_target_properties(MagnumWglContextObjects PROPERTIES POSITION_INDEPENDENT_CODE ON)
     endif()
@@ -710,7 +710,7 @@ if(NEED_WGLCONTEXT OR WITH_WGLCONTEXT)
         if(BUILD_STATIC_PIC)
             set_target_properties(MagnumWglContext PROPERTIES POSITION_INDEPENDENT_CODE ON)
         endif()
-        target_link_libraries(MagnumWglContext Magnum)
+        target_link_libraries(MagnumWglContext PUBLIC MagnumGL)
 
         install(TARGETS MagnumWglContext
             RUNTIME DESTINATION ${MAGNUM_BINARY_INSTALL_DIR}
@@ -725,24 +725,24 @@ endif()
 # Magnum Info
 if(WITH_MAGNUMINFO)
     add_executable(magnum-info info.cpp)
-    target_link_libraries(magnum-info Magnum)
+    target_link_libraries(magnum-info PRIVATE MagnumGL)
     if(MAGNUM_TARGET_HEADLESS OR CORRADE_TARGET_EMSCRIPTEN)
-        target_link_libraries(magnum-info MagnumWindowlessEglApplication)
+        target_link_libraries(magnum-info PRIVATE MagnumWindowlessEglApplication)
     elseif(CORRADE_TARGET_IOS)
-        target_link_libraries(magnum-info MagnumWindowlessIosApplication)
+        target_link_libraries(magnum-info PRIVATE MagnumWindowlessIosApplication)
     elseif(CORRADE_TARGET_APPLE)
-        target_link_libraries(magnum-info MagnumWindowlessCglApplication)
+        target_link_libraries(magnum-info PRIVATE MagnumWindowlessCglApplication)
     elseif(CORRADE_TARGET_UNIX)
         if(MAGNUM_TARGET_GLES AND NOT MAGNUM_TARGET_DESKTOP_GLES)
-            target_link_libraries(magnum-info MagnumWindowlessEglApplication)
+            target_link_libraries(magnum-info PRIVATE MagnumWindowlessEglApplication)
         else()
-            target_link_libraries(magnum-info MagnumWindowlessGlxApplication)
+            target_link_libraries(magnum-info PRIVATE MagnumWindowlessGlxApplication)
         endif()
     elseif(CORRADE_TARGET_WINDOWS)
         if(MAGNUM_TARGET_GLES AND NOT MAGNUM_TARGET_DESKTOP_GLES)
-            target_link_libraries(magnum-info MagnumWindowlessWindowsEglApplication)
+            target_link_libraries(magnum-info PRIVATE MagnumWindowlessWindowsEglApplication)
         else()
-            target_link_libraries(magnum-info MagnumWindowlessWglApplication)
+            target_link_libraries(magnum-info PRIVATE MagnumWindowlessWglApplication)
         endif()
     else()
         message(FATAL_ERROR "magnum-info is not available on this platform. Set WITH_MAGNUMINFO to OFF to skip building it.")

@@ -27,8 +27,8 @@
 
 #include <Corrade/Utility/Debug.h>
 
-#include "Magnum/Context.h"
-#include "Magnum/OpenGL.h"
+#include "Magnum/GL/Context.h"
+#include "Magnum/GL/OpenGL.h"
 
 namespace Magnum { namespace Platform {
 

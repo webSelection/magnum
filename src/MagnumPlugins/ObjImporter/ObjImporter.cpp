@@ -32,7 +32,7 @@
 #include <Corrade/Containers/ArrayView.h>
 #include <Corrade/Utility/String.h>
 
-#include "Magnum/Mesh.h"
+#include "Magnum/GL/Mesh.h"
 #include "Magnum/MeshTools/CombineIndexedArrays.h"
 #include "Magnum/MeshTools/Duplicate.h"
 #include "Magnum/Math/Color.h"

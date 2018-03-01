@@ -32,7 +32,7 @@
 #include <emscripten/emscripten.h>
 #endif
 
-#include "Magnum/Version.h"
+#include "Magnum/GL/Version.h"
 #include "Magnum/Math/Range.h"
 #include "Magnum/Platform/Context.h"
 #include "Magnum/Platform/ScreenedApplication.hpp"

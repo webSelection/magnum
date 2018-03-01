@@ -27,10 +27,10 @@
 
 #include <Corrade/Containers/Array.h>
 
-#include "Magnum/AbstractShaderProgram.h"
-#include "Magnum/Buffer.h"
-#include "Magnum/Mesh.h"
 #include "Magnum/DebugTools/ResourceManager.h"
+#include "Magnum/GL/AbstractShaderProgram.h"
+#include "Magnum/GL/Buffer.h"
+#include "Magnum/GL/Mesh.h"
 #include "Magnum/MeshTools/CompressIndices.h"
 #include "Magnum/Shaders/Flat.h"
 #include "Magnum/Trade/MeshData2D.h"

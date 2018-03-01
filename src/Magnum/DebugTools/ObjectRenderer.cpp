@@ -25,9 +25,9 @@
 
 #include "ObjectRenderer.h"
 
-#include "Magnum/Buffer.h"
-#include "Magnum/Mesh.h"
 #include "Magnum/DebugTools/ResourceManager.h"
+#include "Magnum/GL/Buffer.h"
+#include "Magnum/GL/Mesh.h"
 #include "Magnum/MeshTools/CompressIndices.h"
 #include "Magnum/MeshTools/Interleave.h"
 #include "Magnum/Primitives/Axis.h"

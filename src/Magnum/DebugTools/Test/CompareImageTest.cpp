@@ -28,9 +28,9 @@
 #include <Corrade/TestSuite/Tester.h>
 #include <Corrade/TestSuite/Compare/Container.h>
 
-#include "Magnum/ImageView.h"
-#include "Magnum/PixelFormat.h"
 #include "Magnum/DebugTools/CompareImage.h"
+#include "Magnum/GL/ImageView.h"
+#include "Magnum/GL/PixelFormat.h"
 #include "Magnum/Math/Functions.h"
 #include "Magnum/Math/Color.h"
 

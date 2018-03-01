@@ -23,7 +23,7 @@
     DEALINGS IN THE SOFTWARE.
 */
 
-#include "Magnum/OpenGLTester.h"
+#include "Magnum/GL/OpenGLTester.h"
 #include "Magnum/Shaders/Phong.h"
 
 namespace Magnum { namespace Shaders { namespace Test {

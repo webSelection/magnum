@@ -27,8 +27,8 @@
 
 #include <Corrade/Utility/System.h>
 
+#include "Magnum/GL/Version.h"
 #include "Magnum/Platform/Context.h"
-#include "Magnum/Version.h"
 
 #include "Implementation/AbstractContextHandler.h"
 

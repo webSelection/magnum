@@ -33,10 +33,10 @@
 #include <tuple>
 #include <vector>
 
-#include "Magnum/Math/Range.h"
-#include "Magnum/Buffer.h"
 #include "Magnum/DimensionTraits.h"
-#include "Magnum/Mesh.h"
+#include "Magnum/Math/Range.h"
+#include "Magnum/GL/Buffer.h"
+#include "Magnum/GL/Mesh.h"
 #include "Magnum/Text/Text.h"
 #include "Magnum/Text/Alignment.h"
 #include "Magnum/Text/visibility.h"

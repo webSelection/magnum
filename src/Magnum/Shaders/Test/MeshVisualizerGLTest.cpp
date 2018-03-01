@@ -23,9 +23,9 @@
     DEALINGS IN THE SOFTWARE.
 */
 
-#include "Magnum/Context.h"
-#include "Magnum/Extensions.h"
-#include "Magnum/OpenGLTester.h"
+#include "Magnum/GL/Context.h"
+#include "Magnum/GL/Extensions.h"
+#include "Magnum/GL/OpenGLTester.h"
 #include "Magnum/Shaders/MeshVisualizer.h"
 
 namespace Magnum { namespace Shaders { namespace Test {

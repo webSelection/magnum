@@ -27,7 +27,7 @@
 
 #include "Magnum/Math/Functions.h"
 #include "Magnum/Math/Color.h"
-#include "Magnum/Mesh.h"
+#include "Magnum/GL/Mesh.h"
 #include "Magnum/Trade/MeshData3D.h"
 
 namespace Magnum { namespace Primitives { namespace Implementation {

@@ -27,7 +27,7 @@
 #include <Corrade/Utility/Arguments.h>
 #include <Corrade/Utility/Directory.h>
 
-#include "Magnum/PixelFormat.h"
+#include "Magnum/GL/PixelFormat.h"
 #include "Magnum/Trade/AbstractImporter.h"
 #include "Magnum/Trade/AbstractImageConverter.h"
 #include "Magnum/Trade/ImageData.h"

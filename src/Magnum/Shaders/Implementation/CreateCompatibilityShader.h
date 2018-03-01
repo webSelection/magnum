@@ -27,9 +27,9 @@
 
 #include <Corrade/Utility/Resource.h>
 
-#include "Magnum/Context.h"
-#include "Magnum/Extensions.h"
-#include "Magnum/Shader.h"
+#include "Magnum/GL/Context.h"
+#include "Magnum/GL/Extensions.h"
+#include "Magnum/GL/Shader.h"
 
 /* Enable only when compiling Shaders library and thus work around
    "static symbol not used" warning when using this file for TextureTools */

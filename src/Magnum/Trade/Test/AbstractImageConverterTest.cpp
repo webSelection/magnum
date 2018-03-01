@@ -29,8 +29,8 @@
 #include <Corrade/TestSuite/Compare/FileToString.h>
 #include <Corrade/Utility/Directory.h>
 
-#include "Magnum/ImageView.h"
-#include "Magnum/PixelFormat.h"
+#include "Magnum/GL/ImageView.h"
+#include "Magnum/GL/PixelFormat.h"
 #include "Magnum/Trade/AbstractImageConverter.h"
 #include "Magnum/Trade/ImageData.h"
 

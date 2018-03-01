@@ -26,23 +26,23 @@
 #include "TextureImage.h"
 
 #ifndef MAGNUM_TARGET_GLES2
-#include "Magnum/BufferImage.h"
+#include "Magnum/GL/BufferImage.h"
 #endif
-#include "Magnum/Context.h"
-#include "Magnum/Extensions.h"
-#include "Magnum/Framebuffer.h"
-#include "Magnum/Image.h"
-#include "Magnum/Texture.h"
+#include "Magnum/GL/Context.h"
+#include "Magnum/GL/Extensions.h"
+#include "Magnum/GL/Framebuffer.h"
+#include "Magnum/GL/Image.h"
+#include "Magnum/GL/Texture.h"
 
 #if defined(MAGNUM_TARGET_GLES) && !defined(MAGNUM_TARGET_GLES2)
 #include <Corrade/Utility/Resource.h>
 
-#include "Magnum/AbstractShaderProgram.h"
-#include "Magnum/Mesh.h"
-#include "Magnum/PixelFormat.h"
-#include "Magnum/Shader.h"
-#include "Magnum/TextureFormat.h"
-#include "Magnum/Version.h"
+#include "Magnum/GL/AbstractShaderProgram.h"
+#include "Magnum/GL/Mesh.h"
+#include "Magnum/GL/PixelFormat.h"
+#include "Magnum/GL/Shader.h"
+#include "Magnum/GL/TextureFormat.h"
+#include "Magnum/GL/Version.h"
 
 #ifdef MAGNUM_BUILD_STATIC
 static void importDebugToolsResources() {

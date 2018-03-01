@@ -23,12 +23,12 @@
     DEALINGS IN THE SOFTWARE.
 */
 
-#include <Magnum/DefaultFramebuffer.h>
+#include <Magnum/GL/DefaultFramebuffer.h>
 #include <Magnum/Platform/Sdl2Application.h>
 /** [0] */
-#include <Magnum/Context.h>
-#include <Magnum/Renderer.h>
-#include <Magnum/Version.h>
+#include <Magnum/GL/Context.h>
+#include <Magnum/GL/Renderer.h>
+#include <Magnum/GL/Version.h>
 #include <Magnum/Math/Color.h>
 /** [0] */
 
