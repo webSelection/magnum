@@ -2127,7 +2127,7 @@ typedef struct {
    vkEnumerateInstanceLayerProperties() functions can be loaded statically to
    avoid the need for a global flextVkInit() that needs to be called before
    everything else. */
-void flextVkInitInstance(VkInstance instance);
+void FLEXTVK_EXPORT flextVkInitInstance(VkInstance instance);
 
 
 /* VK_VERSION_1_0 */
