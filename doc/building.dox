@@ -516,9 +516,12 @@ default.
 There are also a few command-line utilities, also all disabled by default:
 
 -   `WITH_MAGNUMINFO` --- Build the @ref magnum-info "magnum-info" executable,
-    which provides information about the engine and OpenGL capabilities.
-    Enables building of one of the windowless application libraries based on
-    the target platform.
+    which provides information about the engine OpenGL capabilities. Enables
+    building of one of the windowless application libraries based on the target
+    platform.
+-   `WITH_VK_INFO` --- Build the @ref magnum-vk-info "magnum-vk-info"
+    executable, which provides information about the engine Vulkan
+    capabilities.
 -   `WITH_AL_INFO` --- Build the @ref magnum-al-info "magnum-al-info"
     executable, which provides information about OpenAL capabilities.
 -   `WITH_DISTANCEFIELDCONVERTER` --- Build the

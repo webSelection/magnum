@@ -43,6 +43,14 @@
 
 using namespace Magnum;
 
+/** @page magnum-vk-info Magnum Vulkan Info
+@brief Displays information about Magnum engine Vulkan capabilities
+
+@m_footernavigation
+
+@todoc
+*/
+
 int main() {
     Debug{} << "Instance layers:";
 
