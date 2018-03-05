@@ -119,6 +119,7 @@ int main() {
                 VkPhysicalDeviceFeatures features{};
                 vkGetPhysicalDeviceFeatures(devices[i], &features);
                 Debug{} << "shaderFloat64" << features.shaderFloat64;
+                Debug{} << "pipelineStatisticsQuery" << features.pipelineStatisticsQuery;
             }
 
             {
@@ -128,11 +129,26 @@ int main() {
                 Debug{} << Debug::newline << "Found" << count << "device queue families:";
                 for(std::size_t i = 0; i != count; ++i) {
                     Debug d;
-                    d << properties[i].queueCount;
+                    d << " " << properties[i].queueCount;
                     if(properties[i].queueFlags & VK_QUEUE_COMPUTE_BIT) d << "compute";
                     if(properties[i].queueFlags & VK_QUEUE_GRAPHICS_BIT) d << "graphics";
                     if(properties[i].queueFlags & VK_QUEUE_SPARSE_BINDING_BIT) d << "sparse-binding";
                     if(properties[i].queueFlags & VK_QUEUE_TRANSFER_BIT) d << "transfer";
+                }
+            }
+
+            {
+                Debug{} << Debug::newline << "Device memory properties:";
+
+                VkPhysicalDeviceMemoryProperties properties{};
+                vkGetPhysicalDeviceMemoryProperties(devices[i], &properties);
+                Debug{} << Debug::newline << "Found" << properties.memoryTypeCount << "memory types:";
+                for(std::size_t i = 0; i != properties.memoryTypeCount; ++i) {
+                    Debug{} << "  host visible:" << !!(properties.memoryTypes[i].propertyFlags & VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT) << properties.memoryTypes[i].heapIndex;
+                }
+                Debug{} << Debug::newline << "Found" << properties.memoryHeapCount << "memory heaps:";
+                for(std::size_t i = 0; i != properties.memoryHeapCount; ++i) {
+                    Debug{} << "  device local:" << !!(properties.memoryHeaps[i].flags & VK_MEMORY_HEAP_DEVICE_LOCAL_BIT) << properties.memoryHeaps[i].size/1024/1024 << "MB";
                 }
             }
         }
