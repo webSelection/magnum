@@ -43,9 +43,9 @@ Queries timestamp after all previous OpenGL calls have been processed. It can
 query either duration of sequence of commands or absolute timestamp. Example
 usage of both methods:
 
-@snippet Magnum.cpp TimeQuery-usage1
+@snippet MagnumGL.cpp TimeQuery-usage1
 
-@snippet Magnum.cpp TimeQuery-usage2
+@snippet MagnumGL.cpp TimeQuery-usage2
 
 Using the latter results in fewer OpenGL calls when doing more measures.
 

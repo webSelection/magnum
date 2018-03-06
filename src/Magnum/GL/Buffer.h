@@ -147,32 +147,32 @@ Default way to set or update buffer data with @ref setData() or @ref setSubData(
 is to use @ref Corrade::Containers::ArrayView. See its documentation for
 more information about automatic conversions etc.
 
-@snippet Magnum.cpp Buffer-setdata
+@snippet MagnumGL.cpp Buffer-setdata
 
 There is also overload for array-like containers from STL, such as
 @ref std::vector or @link std::array @endlink:
 
-@snippet Magnum.cpp Buffer-setdata-stl
+@snippet MagnumGL.cpp Buffer-setdata-stl
 
 @section Buffer-data-mapping Memory mapping
 
 Buffer data can be also updated asynchronously. First you need to allocate
 the buffer to desired size by passing @cpp nullptr @ce to @ref setData(), e.g.:
 
-@snippet Magnum.cpp Buffer-setdata-allocate
+@snippet MagnumGL.cpp Buffer-setdata-allocate
 
 Then you can map the buffer to client memory and operate with the memory
 directly. After you are done with the operation, call @ref unmap() to unmap the
 buffer again. The @ref map() functions return a view on `char` array and you
 may want to cast it to some useful type first using @ref Containers::arrayCast():
 
-@snippet Magnum.cpp Buffer-map
+@snippet MagnumGL.cpp Buffer-map
 
 If you are updating only a few discrete portions of the buffer, you can use
 @ref MapFlag::FlushExplicit and @ref flushMappedRange() to reduce number of
 memory operations performed by OpenGL on unmapping. Example:
 
-@snippet Magnum.cpp Buffer-flush
+@snippet MagnumGL.cpp Buffer-flush
 
 @section Buffer-webgl-restrictions WebGL restrictions
 
@@ -183,7 +183,7 @@ default uses any sufficient target when binding the buffer internally (e.g. for
 setting data). To avoid GL errors, set target hint to desired target, either in
 constructor or using @ref Buffer::setTargetHint():
 
-@snippet Magnum.cpp Buffer-webgl
+@snippet MagnumGL.cpp Buffer-webgl
 
 To ease up the development, @ref Mesh checks proper target hint when adding
 vertex and index buffers in WebGL.

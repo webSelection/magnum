@@ -58,35 +58,35 @@ functions and properties:
 <li> **Attribute definitions** with location and type for
     configuring meshes, for example:
 
-    @snippet Magnum.cpp AbstractShaderProgram-input-attributes
+    @snippet MagnumGL.cpp AbstractShaderProgram-input-attributes
 </li>
 <li> **Output attribute locations**, if desired, for example:
 
-    @snippet Magnum.cpp AbstractShaderProgram-output-attributes
+    @snippet MagnumGL.cpp AbstractShaderProgram-output-attributes
 </li>
 <li> **Constructor**, which loads, compiles and attaches particular shaders and
     links the program together, for example:
 
-    @snippet Magnum.cpp AbstractShaderProgram-constructor
+    @snippet MagnumGL.cpp AbstractShaderProgram-constructor
 </li>
 <li> **Uniform setting functions**, which will provide public interface for
     protected @ref setUniform() functions. For usability purposes you can
     implement also method chaining. Example:
 
-    @snippet Magnum.cpp AbstractShaderProgram-uniforms
+    @snippet MagnumGL.cpp AbstractShaderProgram-uniforms
 </li>
 <li> **Texture and texture image binding functions** in which you bind the
     textures/images to particular texture/image units using
     @ref Texture::bind() "*Texture::bind()" /
     @ref Texture::bindImage() "*Texture::bindImage()" and similar, for example:
 
-    @snippet Magnum.cpp AbstractShaderProgram-textures
+    @snippet MagnumGL.cpp AbstractShaderProgram-textures
 </li>
 <li> **Transform feedback setup function**, if needed, in which you bind
     buffers to particular indices using @ref TransformFeedback::attachBuffer()
     and similar, possibly with overloads based on desired use cases, e.g.:
 
-    @snippet Magnum.cpp AbstractShaderProgram-xfb
+    @snippet MagnumGL.cpp AbstractShaderProgram-xfb
 </li></ul>
 
 @subsection AbstractShaderProgram-attribute-location Binding attribute location
@@ -129,7 +129,7 @@ out vec4 color;
 out vec3 normal;
 @endcode
 
-@snippet Magnum.cpp AbstractShaderProgram-binding
+@snippet MagnumGL.cpp AbstractShaderProgram-binding
 
 @see @ref maxVertexAttributes(), @ref AbstractFramebuffer::maxDrawBuffers()
 @requires_gl30 Extension @extension{EXT,gpu_shader4} for using
@@ -180,7 +180,7 @@ uniform mat4 transformationMatrix;
 uniform mat3 normalMatrix;
 @endcode
 
-@snippet Magnum.cpp AbstractShaderProgram-uniform-location
+@snippet MagnumGL.cpp AbstractShaderProgram-uniform-location
 
 @see @ref maxUniformLocations()
 @requires_gl43 Extension @extension{ARB,explicit_uniform_location} for
@@ -225,7 +225,7 @@ layout(std140) uniform material {
 };
 @endcode
 
-@snippet Magnum.cpp AbstractShaderProgram-uniform-block-binding
+@snippet MagnumGL.cpp AbstractShaderProgram-uniform-block-binding
 
 @see @ref Buffer::maxUniformBindings()
 @requires_gl31 Extension @extension{ARB,uniform_buffer_object}
@@ -283,7 +283,7 @@ uniform sampler2D diffuseTexture;
 uniform sampler2D specularTexture;
 @endcode
 
-@snippet Magnum.cpp AbstractShaderProgram-texture-uniforms
+@snippet MagnumGL.cpp AbstractShaderProgram-texture-uniforms
 
 @see @ref Shader::maxTextureImageUnits(), @ref maxImageUnits()
 @requires_gl42 Extension @extension{ARB,shading_language_420pack} for explicit
@@ -322,7 +322,7 @@ out block {
 out vec3 velocity;
 @endcode
 
-@snippet Magnum.cpp AbstractShaderProgram-xfb-outputs
+@snippet MagnumGL.cpp AbstractShaderProgram-xfb-outputs
 
 @see @ref TransformFeedback::maxInterleavedComponents(),
     @ref TransformFeedback::maxSeparateAttributes(),
@@ -348,7 +348,7 @@ needed (see @ref Framebuffer-usage "Framebuffer documentation" for more
 information). In each draw event set all required shader parameters, bind
 specific framebuffer (if needed) and then call @ref Mesh::draw(). Example:
 
-@snippet Magnum.cpp AbstractShaderProgram-rendering
+@snippet MagnumGL.cpp AbstractShaderProgram-rendering
 
 @section AbstractShaderProgram-compute-workflow Compute workflow
 

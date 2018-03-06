@@ -169,26 +169,26 @@ commands are issued when calling @ref draw().
 
 @subsubsection Mesh-configuration-example-basic Basic non-indexed mesh
 
-@snippet Magnum.cpp Mesh-nonindexed
+@snippet MagnumGL.cpp Mesh-nonindexed
 
 @subsubsection Mesh-configuration-interleaved Interleaved vertex data
 
-@snippet Magnum.cpp Mesh-interleaved
+@snippet MagnumGL.cpp Mesh-interleaved
 
 @subsubsection Mesh-configuration-indexed Indexed mesh
 
-@snippet Magnum.cpp Mesh-indexed
+@snippet MagnumGL.cpp Mesh-indexed
 
 Or using @ref MeshTools::interleave() and @ref MeshTools::compressIndices():
 
-@snippet Magnum.cpp Mesh-indexed-tools
+@snippet MagnumGL.cpp Mesh-indexed-tools
 
 Or, if you plan to use the mesh with stock shaders, you can just use
 @ref MeshTools::compile().
 
 @subsubsection Mesh-configuration-formats Specific formats of vertex data
 
-@snippet Magnum.cpp Mesh-formats
+@snippet MagnumGL.cpp Mesh-formats
 
 @subsubsection Mesh-configuration-dynamic Dynamically specified attributes
 
@@ -200,7 +200,7 @@ that case, there are overloads of @ref addVertexBuffer() and
 unsigned byte to float with one byte padding at the end could then look like
 this:
 
-@snippet Magnum.cpp Mesh-dynamic
+@snippet MagnumGL.cpp Mesh-dynamic
 
 @section Mesh-rendering Rendering meshes
 
@@ -595,14 +595,14 @@ class MAGNUM_GL_EXPORT Mesh: public AbstractObject {
          * position and normal, so you have to skip weight and texture
          * coordinate in each vertex:
          *
-         * @snippet Magnum.cpp Mesh-addVertexBuffer1
+         * @snippet MagnumGL.cpp Mesh-addVertexBuffer1
          *
          * You can also achieve the same effect by calling @ref addVertexBuffer()
          * more times with explicitly specified gaps before and after the
          * attributes. This can be used for e.g. runtime-dependent
          * configuration, as it isn't dependent on the variadic template:
          *
-         * @snippet Magnum.cpp Mesh-addVertexBuffer2
+         * @snippet MagnumGL.cpp Mesh-addVertexBuffer2
          *
          * If specifying more than one attribute, the function assumes that
          * the array is interleaved. Adding non-interleaved vertex buffer can
@@ -610,7 +610,7 @@ class MAGNUM_GL_EXPORT Mesh: public AbstractObject {
          * Above example with weight, position, texture coordinate and normal
          * arrays one after another (non-interleaved):
          *
-         * @snippet Magnum.cpp Mesh-addVertexBuffer3
+         * @snippet MagnumGL.cpp Mesh-addVertexBuffer3
          *
          * If @extension{ARB,vertex_array_object} (part of OpenGL 3.0), OpenGL
          * ES 3.0, WebGL 2.0, @extension{OES,vertex_array_object} in OpenGL

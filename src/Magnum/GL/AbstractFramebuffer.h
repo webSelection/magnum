@@ -356,7 +356,7 @@ class MAGNUM_GL_EXPORT AbstractFramebuffer {
          *
          * Convenience alternative to the above, example usage:
          *
-         * @snippet Magnum.cpp AbstractFramebuffer-read1
+         * @snippet MagnumGL.cpp AbstractFramebuffer-read1
          */
         Image2D read(const Range2Di& rectangle, Image2D&& image);
 
@@ -383,7 +383,7 @@ class MAGNUM_GL_EXPORT AbstractFramebuffer {
          *
          * Convenience alternative to the above, example usage:
          *
-         * @snippet Magnum.cpp AbstractFramebuffer-read2
+         * @snippet MagnumGL.cpp AbstractFramebuffer-read2
          */
         BufferImage2D read(const Range2Di& rectangle, BufferImage2D&& image, BufferUsage usage);
         #endif

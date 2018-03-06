@@ -56,12 +56,12 @@ textures for actual on-screen rendering. First you need to create the
 framebuffer with the same viewport as default framebuffer and attach textures
 and renderbuffers to desired outputs:
 
-@snippet Magnum.cpp Framebuffer-usage-attach
+@snippet MagnumGL.cpp Framebuffer-usage-attach
 
 Then you need to map outputs of your shader to color attachments in the
 framebuffer:
 
-@snippet Magnum.cpp Framebuffer-usage-map
+@snippet MagnumGL.cpp Framebuffer-usage-map
 
 The actual @ref Platform::Sdl2Application::drawEvent() "drawEvent()" might look
 like this. First you clear all buffers you need, perform drawing to off-screen

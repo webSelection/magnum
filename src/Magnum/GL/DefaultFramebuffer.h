@@ -371,7 +371,7 @@ class MAGNUM_GL_EXPORT DefaultFramebuffer: public AbstractFramebuffer {
          * can achieve the same by passing @ref DrawAttachment::None as
          * attachment. Example usage:
          *
-         * @snippet Magnum.cpp DefaultFramebuffer-usage-map
+         * @snippet MagnumGL.cpp DefaultFramebuffer-usage-map
          *
          * If neither @extension{ARB,direct_state_access} (part of OpenGL 4.5)
          * nor @extension{EXT,direct_state_access} desktop extension is

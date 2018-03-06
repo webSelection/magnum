@@ -60,13 +60,13 @@ See @ref Texture documentation for introduction.
 Common usage is to fully configure all texture parameters and then set the
 data. Example configuration:
 
-@snippet Magnum.cpp TextureArray-usage1
+@snippet MagnumGL.cpp TextureArray-usage1
 
 It is often more convenient to first allocate the memory for all layers by
 calling @ref setStorage() and then specify each layer separately using
 @ref setSubImage():
 
-@snippet Magnum.cpp TextureArray-usage2
+@snippet MagnumGL.cpp TextureArray-usage2
 
 In shader, the texture is used via @glsl sampler1DArray @ce / @glsl sampler2DArray @ce,
 @glsl sampler1DArrayShadow @ce / @glsl sampler1DArrayShadow @ce, @glsl isampler1DArray @ce
@@ -480,7 +480,7 @@ template<UnsignedInt dimensions> class TextureArray: public AbstractTexture {
          *
          * Convenience alternative to the above, example usage:
          *
-         * @snippet Magnum.cpp TextureArray-image1
+         * @snippet MagnumGL.cpp TextureArray-image1
          */
         Image<dimensions+1> image(Int level, Image<dimensions+1>&& image);
 
@@ -501,7 +501,7 @@ template<UnsignedInt dimensions> class TextureArray: public AbstractTexture {
          *
          * Convenience alternative to the above, example usage:
          *
-         * @snippet Magnum.cpp TextureArray-image2
+         * @snippet MagnumGL.cpp TextureArray-image2
          */
         BufferImage<dimensions+1> image(Int level, BufferImage<dimensions+1>&& image, BufferUsage usage);
 
@@ -522,7 +522,7 @@ template<UnsignedInt dimensions> class TextureArray: public AbstractTexture {
          *
          * Convenience alternative to the above, example usage:
          *
-         * @snippet Magnum.cpp TextureArray-compressedImage1
+         * @snippet MagnumGL.cpp TextureArray-compressedImage1
          */
         CompressedImage<dimensions+1> compressedImage(Int level, CompressedImage<dimensions+1>&& image);
 
@@ -543,7 +543,7 @@ template<UnsignedInt dimensions> class TextureArray: public AbstractTexture {
          *
          * Convenience alternative to the above, example usage:
          *
-         * @snippet Magnum.cpp TextureArray-compressedImage2
+         * @snippet MagnumGL.cpp TextureArray-compressedImage2
          */
         CompressedBufferImage<dimensions+1> compressedImage(Int level, CompressedBufferImage<dimensions+1>&& image, BufferUsage usage);
 
@@ -565,7 +565,7 @@ template<UnsignedInt dimensions> class TextureArray: public AbstractTexture {
          *
          * Convenience alternative to the above, example usage:
          *
-         * @snippet Magnum.cpp TextureArray-subImage1
+         * @snippet MagnumGL.cpp TextureArray-subImage1
          */
         Image<dimensions+1> subImage(Int level, const RangeTypeFor<dimensions+1, Int>& range, Image<dimensions+1>&& image);
 
@@ -587,7 +587,7 @@ template<UnsignedInt dimensions> class TextureArray: public AbstractTexture {
          *
          * Convenience alternative to the above, example usage:
          *
-         * @snippet Magnum.cpp TextureArray-subImage2
+         * @snippet MagnumGL.cpp TextureArray-subImage2
          */
         BufferImage<dimensions+1> subImage(Int level, const RangeTypeFor<dimensions+1, Int>& range, BufferImage<dimensions+1>&& image, BufferUsage usage);
 
@@ -613,7 +613,7 @@ template<UnsignedInt dimensions> class TextureArray: public AbstractTexture {
          *
          * Convenience alternative to the above, example usage:
          *
-         * @snippet Magnum.cpp TextureArray-compressedSubImage1
+         * @snippet MagnumGL.cpp TextureArray-compressedSubImage1
          */
         CompressedImage<dimensions+1> compressedSubImage(Int level, const RangeTypeFor<dimensions+1, Int>& range, CompressedImage<dimensions+1>&& image);
 
@@ -639,7 +639,7 @@ template<UnsignedInt dimensions> class TextureArray: public AbstractTexture {
          *
          * Convenience alternative to the above, example usage:
          *
-         * @snippet Magnum.cpp TextureArray-compressedSubImage2
+         * @snippet MagnumGL.cpp TextureArray-compressedSubImage2
          */
         CompressedBufferImage<dimensions+1> compressedSubImage(Int level, const RangeTypeFor<dimensions+1, Int>& range, CompressedBufferImage<dimensions+1>&& image, BufferUsage usage);
         #endif

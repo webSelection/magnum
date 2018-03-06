@@ -68,7 +68,7 @@ Common usage is to fully configure all texture parameters and then set the
 data from e.g. @ref Image. Example configuration of high quality texture with
 trilinear anisotropic filtering, i.e. the best you can ask for:
 
-@snippet Magnum.cpp Texture-usage
+@snippet MagnumGL.cpp Texture-usage
 
 @attention Note that default configuration is to use mipmaps. Be sure to either
     reduce mip level count using @ref setBaseLevel() and @ref setMaxLevel(),
@@ -585,7 +585,7 @@ template<UnsignedInt dimensions> class Texture: public AbstractTexture {
          * @cpp '1' @ce for zero and one, similarly as in the
          * @ref Math::swizzle() function. Example usage:
          *
-         * @snippet Magnum.cpp Texture-setSwizzle
+         * @snippet MagnumGL.cpp Texture-setSwizzle
          *
          * If neither @extension{ARB,direct_state_access} (part of OpenGL 4.5)
          * nor @extension{EXT,direct_state_access} desktop extension is
@@ -783,7 +783,7 @@ template<UnsignedInt dimensions> class Texture: public AbstractTexture {
          *
          * Convenience alternative to the above, example usage:
          *
-         * @snippet Magnum.cpp Texture-image1
+         * @snippet MagnumGL.cpp Texture-image1
          */
         Image<dimensions> image(Int level, Image<dimensions>&& image);
 
@@ -810,7 +810,7 @@ template<UnsignedInt dimensions> class Texture: public AbstractTexture {
          *
          * Convenience alternative to the above, example usage:
          *
-         * @snippet Magnum.cpp Texture-image2
+         * @snippet MagnumGL.cpp Texture-image2
          */
         BufferImage<dimensions> image(Int level, BufferImage<dimensions>&& image, BufferUsage usage);
 
@@ -854,7 +854,7 @@ template<UnsignedInt dimensions> class Texture: public AbstractTexture {
          *
          * Convenience alternative to the above, example usage:
          *
-         * @snippet Magnum.cpp Texture-compressedImage1
+         * @snippet MagnumGL.cpp Texture-compressedImage1
          */
         CompressedImage<dimensions> compressedImage(Int level, CompressedImage<dimensions>&& image);
 
@@ -881,7 +881,7 @@ template<UnsignedInt dimensions> class Texture: public AbstractTexture {
          *
          * Convenience alternative to the above, example usage:
          *
-         * @snippet Magnum.cpp Texture-compressedImage2
+         * @snippet MagnumGL.cpp Texture-compressedImage2
          */
         CompressedBufferImage<dimensions> compressedImage(Int level, CompressedBufferImage<dimensions>&& image, BufferUsage usage);
 
@@ -909,7 +909,7 @@ template<UnsignedInt dimensions> class Texture: public AbstractTexture {
          *
          * Convenience alternative to the above, example usage:
          *
-         * @snippet Magnum.cpp Texture-subImage1
+         * @snippet MagnumGL.cpp Texture-subImage1
          */
         Image<dimensions> subImage(Int level, const RangeTypeFor<dimensions, Int>& range, Image<dimensions>&& image);
 
@@ -936,7 +936,7 @@ template<UnsignedInt dimensions> class Texture: public AbstractTexture {
          *
          * Convenience alternative to the above, example usage:
          *
-         * @snippet Magnum.cpp Texture-subImage2
+         * @snippet MagnumGL.cpp Texture-subImage2
          */
         BufferImage<dimensions> subImage(Int level, const RangeTypeFor<dimensions, Int>& range, BufferImage<dimensions>&& image, BufferUsage usage);
 
@@ -972,7 +972,7 @@ template<UnsignedInt dimensions> class Texture: public AbstractTexture {
          *
          * Convenience alternative to the above, example usage:
          *
-         * @snippet Magnum.cpp Texture-compressedSubImage1
+         * @snippet MagnumGL.cpp Texture-compressedSubImage1
          */
         CompressedImage<dimensions> compressedSubImage(Int level, const RangeTypeFor<dimensions, Int>& range, CompressedImage<dimensions>&& image);
 
@@ -1002,7 +1002,7 @@ template<UnsignedInt dimensions> class Texture: public AbstractTexture {
          *
          * Convenience alternative to the above, example usage:
          *
-         * @snippet Magnum.cpp Texture-compressedSubImage2
+         * @snippet MagnumGL.cpp Texture-compressedSubImage2
          */
         CompressedBufferImage<dimensions> compressedSubImage(Int level, const RangeTypeFor<dimensions, Int>& range, CompressedBufferImage<dimensions>&& image, BufferUsage usage);
         #endif

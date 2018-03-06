@@ -42,7 +42,7 @@ namespace Magnum {
 Queries count of generated primitives from vertex shader, geometry shader or
 transform feedback. Example usage:
 
-@snippet Magnum.cpp PrimitiveQuery-usage
+@snippet MagnumGL.cpp PrimitiveQuery-usage
 
 @see @ref SampleQuery, @ref TimeQuery, @ref TransformFeedback
 @requires_gl30 Extension @extension{EXT,transform_feedback}
