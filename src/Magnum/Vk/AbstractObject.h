@@ -1,9 +1,10 @@
-@require(passthru, functions, enums, options, version, extensions)
+#ifndef Magnum_Vk_Vulkan_h
+#define Magnum_Vk_Vulkan_h
 /*
     This file is part of Magnum.
 
     Copyright © 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018
-              Vladimír Vondruš <mosra@@centrum.cz>
+              Vladimír Vondruš <mosra@centrum.cz>
 
     Permission is hereby granted, free of charge, to any person obtaining a
     copy of this software and associated documentation files (the "Software"),
@@ -24,32 +25,47 @@
     DEALINGS IN THE SOFTWARE.
 */
 
-#include "flextVk.h"
+/** @file
+ * @brief Enum @ref Magnum::Vk::ObjectFlag, enum set @ref Magnum::Vk::ObjectFlags, macro @ref MAGNUM_VK_ASSERT_OUTPUT()
+ */
 
-FlextVkInstance flextVkInstance{};
+#include <Corrade/Containers/EnumSet.h>
+#include <Corrade/Utility/Assert.h>
 
-FlextVkDevice flextVkDevice{};
+#include "Magnum/Magnum.h"
+#include "MagnumExternal/Vulkan/flextVk.h"
 
-void flextVkInitInstance(VkInstance instance, FlextVkInstance* data) {
-    @for category,funcs in functions:
-    @if funcs:
-    @for f in funcs:
-    @if (f.params[0][1] in ['VkInstance', 'VkPhysicalDevice'] or f.name == 'GetDeviceProcAddr') and f.name != 'GetInstanceProcAddr':
-    data->@f.name = reinterpret_cast<@f.returntype\
-(VKAPI_PTR*)(@f.param_type_list_string())>(vkGetInstanceProcAddr(instance, "vk@f.name"));
-    @end
-    @end
-    @end
-    @end
-}
+namespace Magnum { namespace Vk {
 
-void flextVkInitDevice(VkDevice device, FlextVkDevice* data) {
-    @for category,funcs in functions:
-    @for f in funcs:
-    @if f.params[0][1] not in ['VkInstance', 'VkPhysicalDevice'] and f.name not in ['GetInstanceProcAddr', 'GetDeviceProcAddr', 'EnumerateInstanceExtensionProperties', 'EnumerateInstanceLayerProperties', 'CreateInstance']:
-    data->@f.name = reinterpret_cast<@f.returntype\
-(VKAPI_PTR*)(@f.param_type_list_string())>(vkGetDeviceProcAddr(device, "vk@f.name"));
-    @end
-    @end
-    @end
-}
+/**
+@brief Assert that a Vulkan function call doesn't fail
+
+Equivalent to
+
+@code{.cpp}
+CORRADE_INTERNAL_ASSERT(call == VK_SUCCESS)
+@endcode
+*/
+#define MAGNUM_VK_ASSERT_OUTPUT(call) \
+    CORRADE_INTERNAL_ASSERT(call == VK_SUCCESS)
+
+/**
+@brief Object wrapping flag
+
+@see @ref ObjectFlags, @ref Instance::wrap()
+*/
+enum class ObjectFlag: UnsignedByte {
+    /** Delete the object on destruction. */
+    DeleteOnDestruction = 1 << 0
+};
+
+/**
+@brief Object wrapping flags
+
+@see @ref Instance::wrap()
+*/
+typedef Containers::EnumSet<ObjectFlag> ObjectFlags;
+
+}}
+
+#endif

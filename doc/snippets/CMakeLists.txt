@@ -43,6 +43,14 @@ if(WITH_GL)
     set_target_properties(snippets-MagnumGL PROPERTIES FOLDER "Magnum/doc/snippets")
 endif()
 
+if(WITH_VK)
+    add_library(snippets-MagnumVk STATIC
+        MagnumVk-device.cpp
+        MagnumVk-instance.cpp)
+    target_link_libraries(snippets-MagnumVk PRIVATE MagnumVk)
+    set_target_properties(snippets-MagnumVk PROPERTIES FOLDER "Magnum/doc/snippets")
+endif()
+
 find_package(Corrade COMPONENTS TestSuite)
 
 # TODO: causes spurious linker errors on Travis iOS build, so I'm disabling it

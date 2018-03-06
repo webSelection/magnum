@@ -1,9 +1,8 @@
-@require(passthru, functions, enums, options, version, extensions)
 /*
     This file is part of Magnum.
 
     Copyright © 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018
-              Vladimír Vondruš <mosra@@centrum.cz>
+              Vladimír Vondruš <mosra@centrum.cz>
 
     Permission is hereby granted, free of charge, to any person obtaining a
     copy of this software and associated documentation files (the "Software"),
@@ -24,32 +23,27 @@
     DEALINGS IN THE SOFTWARE.
 */
 
-#include "flextVk.h"
+namespace Magnum {
+/** @page vulkan-support Vulkan support state
+@brief List of (un)supported Vulkan features and extensions.
 
-FlextVkInstance flextVkInstance{};
+@tableofcontents
+@m_footernavigation
 
-FlextVkDevice flextVkDevice{};
+@section vulkan-support-extensions-vendor Vendor Vulkan extensions
 
-void flextVkInitInstance(VkInstance instance, FlextVkInstance* data) {
-    @for category,funcs in functions:
-    @if funcs:
-    @for f in funcs:
-    @if (f.params[0][1] in ['VkInstance', 'VkPhysicalDevice'] or f.name == 'GetDeviceProcAddr') and f.name != 'GetInstanceProcAddr':
-    data->@f.name = reinterpret_cast<@f.returntype\
-(VKAPI_PTR*)(@f.param_type_list_string())>(vkGetInstanceProcAddr(instance, "vk@f.name"));
-    @end
-    @end
-    @end
-    @end
-}
+@m_class{m-fullwidth}
 
-void flextVkInitDevice(VkDevice device, FlextVkDevice* data) {
-    @for category,funcs in functions:
-    @for f in funcs:
-    @if f.params[0][1] not in ['VkInstance', 'VkPhysicalDevice'] and f.name not in ['GetInstanceProcAddr', 'GetDeviceProcAddr', 'EnumerateInstanceExtensionProperties', 'EnumerateInstanceLayerProperties', 'CreateInstance']:
-    data->@f.name = reinterpret_cast<@f.returntype\
-(VKAPI_PTR*)(@f.param_type_list_string())>(vkGetDeviceProcAddr(device, "vk@f.name"));
-    @end
-    @end
-    @end
+Extension                                           | Status
+--------------------------------------------------- | ------
+@vk_extension{EXT_debug_report}                     | |
+@vk_extension{EXT_debug_marker}                     | |
+@vk_extension{KHR_get_physical_device_properties2}  | |
+@vk_extension{KHR_maintenance1}                     | |
+@vk_extension{KHR_maintenance2}                     | |
+@vk_extension{KHR_get_memory_requirements2}         | |
+@vk_extension{NV_glsl_shader}                       | |
+
+*/
+
 }

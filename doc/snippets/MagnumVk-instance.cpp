@@ -1,9 +1,8 @@
-@require(passthru, functions, enums, options, version, extensions)
 /*
     This file is part of Magnum.
 
     Copyright © 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018
-              Vladimír Vondruš <mosra@@centrum.cz>
+              Vladimír Vondruš <mosra@centrum.cz>
 
     Permission is hereby granted, free of charge, to any person obtaining a
     copy of this software and associated documentation files (the "Software"),
@@ -24,32 +23,25 @@
     DEALINGS IN THE SOFTWARE.
 */
 
-#include "flextVk.h"
+#include <Corrade/Containers/ArrayView.h>
 
-FlextVkInstance flextVkInstance{};
+#include "Magnum/Magnum.h"
+#include "MagnumExternal/Vulkan/flextVk.h"
 
-FlextVkDevice flextVkDevice{};
+VkInstance instance;
 
-void flextVkInitInstance(VkInstance instance, FlextVkInstance* data) {
-    @for category,funcs in functions:
-    @if funcs:
-    @for f in funcs:
-    @if (f.params[0][1] in ['VkInstance', 'VkPhysicalDevice'] or f.name == 'GetDeviceProcAddr') and f.name != 'GetInstanceProcAddr':
-    data->@f.name = reinterpret_cast<@f.returntype\
-(VKAPI_PTR*)(@f.param_type_list_string())>(vkGetInstanceProcAddr(instance, "vk@f.name"));
-    @end
-    @end
-    @end
-    @end
+using namespace Magnum;
+
+/* [global-instance-function-pointers] */
+#include <MagnumExternal/Vulkan/flextVkGlobal.h>
+
+int main() {
+    // ...
+
+    VkPhysicalDevice devices[10];
+    UnsignedInt count = Containers::arraySize(devices);
+    vkEnumeratePhysicalDevices(instance, &count, devices);
+
+    // ...
 }
-
-void flextVkInitDevice(VkDevice device, FlextVkDevice* data) {
-    @for category,funcs in functions:
-    @for f in funcs:
-    @if f.params[0][1] not in ['VkInstance', 'VkPhysicalDevice'] and f.name not in ['GetInstanceProcAddr', 'GetDeviceProcAddr', 'EnumerateInstanceExtensionProperties', 'EnumerateInstanceLayerProperties', 'CreateInstance']:
-    data->@f.name = reinterpret_cast<@f.returntype\
-(VKAPI_PTR*)(@f.param_type_list_string())>(vkGetDeviceProcAddr(device, "vk@f.name"));
-    @end
-    @end
-    @end
-}
+/* [global-instance-function-pointers] */

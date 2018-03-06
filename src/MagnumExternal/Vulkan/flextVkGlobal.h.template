@@ -1,4 +1,6 @@
 @require(passthru, functions, enums, options, version, extensions)
+#ifndef _flextVkGlobal_h_
+#define _flextVkGlobal_h_
 /*
     This file is part of Magnum.
 
@@ -24,32 +26,48 @@
     DEALINGS IN THE SOFTWARE.
 */
 
-#include "flextVk.h"
+#include "MagnumExternal/Vulkan/flextGL.h"
 
-FlextVkInstance flextVkInstance{};
+#ifdef __cplusplus
+extern "C" {
+#endif
 
-FlextVkDevice flextVkDevice{};
+#ifndef DOXYGEN_GENERATING_OUTPUT /* So the macro names are preserved in the docs */
 
-void flextVkInitInstance(VkInstance instance, FlextVkInstance* data) {
-    @for category,funcs in functions:
-    @if funcs:
-    @for f in funcs:
-    @if (f.params[0][1] in ['VkInstance', 'VkPhysicalDevice'] or f.name == 'GetDeviceProcAddr') and f.name != 'GetInstanceProcAddr':
-    data->@f.name = reinterpret_cast<@f.returntype\
-(VKAPI_PTR*)(@f.param_type_list_string())>(vkGetInstanceProcAddr(instance, "vk@f.name"));
-    @end
-    @end
-    @end
-    @end
+/* Per-instance function pointers */
+extern FLEXTVK_EXPORT FlextVkInstance flextVkInstance;
+@for cat,funcs in functions:
+@if funcs:
+
+/* @cat */
+
+@for f in funcs:
+@if (f.params[0][1] in ['VkInstance', 'VkPhysicalDevice'] or f.name == 'GetDeviceProcAddr') and f.name != 'GetInstanceProcAddr':
+#define vk@f.name flextVkInstance.@f.name
+@end
+@end
+@end
+@end
+
+/* Per-device function pointers */
+extern FLEXTVK_EXPORT FlextVkDevice flextVkDevice;
+@for cat,funcs in functions:
+@if funcs:
+
+/* @cat */
+
+@for f in funcs:
+@if f.params[0][1] not in ['VkInstance', 'VkPhysicalDevice'] and f.name not in ['GetInstanceProcAddr', 'GetDeviceProcAddr', 'EnumerateInstanceExtensionProperties', 'EnumerateInstanceLayerProperties', 'CreateInstance']:
+#define vk@f.name flextVkDevice.@f.name
+@end
+@end
+@end
+@end
+
+#endif
+
+#ifdef __cplusplus
 }
+#endif
 
-void flextVkInitDevice(VkDevice device, FlextVkDevice* data) {
-    @for category,funcs in functions:
-    @for f in funcs:
-    @if f.params[0][1] not in ['VkInstance', 'VkPhysicalDevice'] and f.name not in ['GetInstanceProcAddr', 'GetDeviceProcAddr', 'EnumerateInstanceExtensionProperties', 'EnumerateInstanceLayerProperties', 'CreateInstance']:
-    data->@f.name = reinterpret_cast<@f.returntype\
-(VKAPI_PTR*)(@f.param_type_list_string())>(vkGetDeviceProcAddr(device, "vk@f.name"));
-    @end
-    @end
-    @end
-}
+#endif

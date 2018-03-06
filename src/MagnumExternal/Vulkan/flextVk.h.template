@@ -94,30 +94,58 @@ typedef std::size_t size_t;
 
 @passthru
 
-/* Function prototypes. I'll bite the bullet and expect that
-   vkCreateInstance(), vkEnumerateInstanceExtensionProperties() and
-   vkEnumerateInstanceLayerProperties() functions can be loaded statically to
-   avoid the need for a global flextVkInit() that needs to be called before
-   everything else. */
-void flextVkInitInstance(VkInstance instance);
-
+/* I'll bite the bullet and expect that vkCreateInstance(),
+   vkEnumerateInstanceExtensionProperties() and vkEnumerateInstanceLayerProperties()
+   functions can be loaded statically to avoid the need for a global
+   flextVkInit() that needs to be called before everything else */
 @for cat,funcs in functions:
-@if funcs:
-
-/* @cat */
-
 @for f in funcs:
 @if f.name in ['GetInstanceProcAddr', 'EnumerateInstanceExtensionProperties', 'EnumerateInstanceLayerProperties', 'CreateInstance']:
 VKAPI_ATTR @f.returntype VKAPI_CALL vk@f.name\
 (@f.param_type_list_string());
-@else:
-extern FLEXTVK_EXPORT @f.returntype\
-(VKAPI_PTR *flextvk@f.name)(@f.param_type_list_string());
-#define vk@f.name flextvk@f.name
 @end
 @end
 @end
-@end
+
+/* Per-instance function pointers */
+struct FlextVkInstance {
+    @for cat,funcs in functions:
+    @if funcs:
+
+    /* @cat */
+
+    @for f in funcs:
+    @if (f.params[0][1] in ['VkInstance', 'VkPhysicalDevice'] or f.name == 'GetDeviceProcAddr') and f.name != 'GetInstanceProcAddr':
+    @f.returntype\
+    (VKAPI_PTR *@f.name)(@f.param_type_list_string());
+    @end
+    @end
+    @end
+    @end
+};
+
+/* Per-instance function pointer initialization */
+void flextVkInitInstance(VkInstance instance, FlextVkInstance* data);
+
+/* Per-device function pointers */
+struct FlextVkDevice {
+    @for cat,funcs in functions:
+    @if funcs:
+
+    /* @cat */
+
+    @for f in funcs:
+    @if f.params[0][1] not in ['VkInstance', 'VkPhysicalDevice'] and f.name not in ['GetInstanceProcAddr', 'GetDeviceProcAddr', 'EnumerateInstanceExtensionProperties', 'EnumerateInstanceLayerProperties', 'CreateInstance']:
+    @f.returntype\
+    (VKAPI_PTR *@f.name)(@f.param_type_list_string());
+    @end
+    @end
+    @end
+    @end
+};
+
+/* Per-device function pointer initialization */
+void flextVkInitDevice(VkDevice device, FlextVkDevice* data);
 
 #endif
 

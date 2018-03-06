@@ -1,9 +1,8 @@
-@require(passthru, functions, enums, options, version, extensions)
 /*
     This file is part of Magnum.
 
     Copyright © 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018
-              Vladimír Vondruš <mosra@@centrum.cz>
+              Vladimír Vondruš <mosra@centrum.cz>
 
     Permission is hereby granted, free of charge, to any person obtaining a
     copy of this software and associated documentation files (the "Software"),
@@ -24,32 +23,29 @@
     DEALINGS IN THE SOFTWARE.
 */
 
-#include "flextVk.h"
+/** @page vulkan Vulkan
+@brief State of Vulkan support, version and extension requirements.
 
-FlextVkInstance flextVkInstance{};
+The following table maps Vulkan function names to Magnum API, useful for
+developers with existing Vulkan background. Note that, as reverse mapping, each
+function documentation also contains list of Vulkan functions used. You can
+also use the search functionality to find out which Vulkan API corresponds to
+which Magnum function, class or enum value. Just enter name of an Vulkan
+function, define or GLSL name into the search box.
 
-FlextVkDevice flextVkDevice{};
+-   @subpage vulkan-mapping
 
-void flextVkInitInstance(VkInstance instance, FlextVkInstance* data) {
-    @for category,funcs in functions:
-    @if funcs:
-    @for f in funcs:
-    @if (f.params[0][1] in ['VkInstance', 'VkPhysicalDevice'] or f.name == 'GetDeviceProcAddr') and f.name != 'GetInstanceProcAddr':
-    data->@f.name = reinterpret_cast<@f.returntype\
-(VKAPI_PTR*)(@f.param_type_list_string())>(vkGetInstanceProcAddr(instance, "vk@f.name"));
-    @end
-    @end
-    @end
-    @end
-}
+State of implementation of particular Vulkan versions and extensions is in the
+following table.
 
-void flextVkInitDevice(VkDevice device, FlextVkDevice* data) {
-    @for category,funcs in functions:
-    @for f in funcs:
-    @if f.params[0][1] not in ['VkInstance', 'VkPhysicalDevice'] and f.name not in ['GetInstanceProcAddr', 'GetDeviceProcAddr', 'EnumerateInstanceExtensionProperties', 'EnumerateInstanceLayerProperties', 'CreateInstance']:
-    data->@f.name = reinterpret_cast<@f.returntype\
-(VKAPI_PTR*)(@f.param_type_list_string())>(vkGetDeviceProcAddr(device, "vk@f.name"));
-    @end
-    @end
-    @end
-}
+-   @subpage vulkan-support
+
+@section vulkan-required-extensions Version and extension requirements
+
+-   @subpage requires-vk-extension
+
+*/
+
+/** @page requires-vk-extension Functionality requiring specific Vulkan extension
+ * @m_footernavigation
+ */

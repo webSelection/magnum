@@ -27,19 +27,12 @@
 #include <Corrade/Utility/Debug.h>
 
 #include "Magnum/Magnum.h"
-#include "MagnumExternal/Vulkan/flextVk.h"
+#include "Magnum/Vk/Instance.h"
 
 // TODO: conversion for VkOffset2D, VkOffset3D, VkExtent2D, VkExtent3D, VkRect2D
 // TODO: debug output for vkresult
 // TODO: debug output for device type
 // TODO: version parsing
-
-#define MAGNUM_VK_ASSERT_OUTPUT(call) \
-    do { \
-        VkResult result = call; \
-        if(result != VK_SUCCESS) Debug{} << result; \
-        CORRADE_INTERNAL_ASSERT(result == VK_SUCCESS); \
-    } while(false)
 
 using namespace Magnum;
 
@@ -72,18 +65,12 @@ int main() {
             Debug{} << properties[i].extensionName;
     }
 
-    VkInstance instance;
-    {
-        VkInstanceCreateInfo info{};
-        info.sType = VK_STRUCTURE_TYPE_INSTANCE_CREATE_INFO;
-        MAGNUM_VK_ASSERT_OUTPUT(vkCreateInstance(&info, nullptr, &instance));
-    }
-    flextVkInitInstance(instance);
+    Vk::Instance instance;
 
     {
         VkPhysicalDevice devices[5]{};
         UnsignedInt count = Containers::arraySize(devices);
-        MAGNUM_VK_ASSERT_OUTPUT(vkEnumeratePhysicalDevices(instance, &count, devices));
+        MAGNUM_VK_ASSERT_OUTPUT(vkEnumeratePhysicalDevices(instance.handle(), &count, devices));
         Debug{} << Debug::newline << "Found" << count << "devices:";
         for(std::size_t i = 0; i != count; ++i) {
             VkPhysicalDeviceProperties properties;
@@ -153,6 +140,4 @@ int main() {
             }
         }
     }
-
-    vkDestroyInstance(instance, nullptr);
 }

@@ -1,9 +1,8 @@
-@require(passthru, functions, enums, options, version, extensions)
 /*
     This file is part of Magnum.
 
     Copyright © 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018
-              Vladimír Vondruš <mosra@@centrum.cz>
+              Vladimír Vondruš <mosra@centrum.cz>
 
     Permission is hereby granted, free of charge, to any person obtaining a
     copy of this software and associated documentation files (the "Software"),
@@ -24,32 +23,51 @@
     DEALINGS IN THE SOFTWARE.
 */
 
-#include "flextVk.h"
+#include "Device.h"
 
-FlextVkInstance flextVkInstance{};
+namespace Magnum { namespace Vk {
 
-FlextVkDevice flextVkDevice{};
-
-void flextVkInitInstance(VkInstance instance, FlextVkInstance* data) {
-    @for category,funcs in functions:
-    @if funcs:
-    @for f in funcs:
-    @if (f.params[0][1] in ['VkInstance', 'VkPhysicalDevice'] or f.name == 'GetDeviceProcAddr') and f.name != 'GetInstanceProcAddr':
-    data->@f.name = reinterpret_cast<@f.returntype\
-(VKAPI_PTR*)(@f.param_type_list_string())>(vkGetInstanceProcAddr(instance, "vk@f.name"));
-    @end
-    @end
-    @end
-    @end
+DeviceCreateInfo::DeviceCreateInfo(): _info{} {
+    _info.sType = VK_STRUCTURE_TYPE_INSTANCE_CREATE_INFO;
 }
 
-void flextVkInitDevice(VkDevice device, FlextVkDevice* data) {
-    @for category,funcs in functions:
-    @for f in funcs:
-    @if f.params[0][1] not in ['VkInstance', 'VkPhysicalDevice'] and f.name not in ['GetInstanceProcAddr', 'GetDeviceProcAddr', 'EnumerateInstanceExtensionProperties', 'EnumerateInstanceLayerProperties', 'CreateInstance']:
-    data->@f.name = reinterpret_cast<@f.returntype\
-(VKAPI_PTR*)(@f.param_type_list_string())>(vkGetDeviceProcAddr(device, "vk@f.name"));
-    @end
-    @end
-    @end
+DeviceCreateInfo::DeviceCreateInfo(NoInitT) {}
+
+DeviceCreateInfo::~DeviceCreateInfo() {}
+
+Device Device::wrap(VkDevice handle, ObjectFlags flags) {
+    Device out{NoCreate};
+    out._handle = handle;
+    out._flags = flags;
+
+    /* Init the function pointers */
+    flextVkInitDevice(_handle, &out._functionPointers);
+
+    return out;
 }
+
+Device::Device(const DeviceCreateInfo& info): _flags{ObjectFlag::DeleteOnDestruction} {
+    MAGNUM_VK_ASSERT_OUTPUT(vkCreateDevice(&info.info(), nullptr, &_handle));
+
+    /* Init the functions */
+    flextVkInitDevice(_handle, &_functionPointers);
+}
+
+Device::Device(NoCreateT): _handle{}, _functionPointers{} {}
+
+Device::~Device() {
+    if(_handle && !(_flags & ObjectFlag::DeleteOnDestruction))
+        vkDestroyDevice(_handle, nullptr);
+}
+
+VkDevice Device::release() {
+    const VkDevice handle = _handle;
+    _handle = nullptr;
+    return handle;
+}
+
+void Device::populateGlobalFunctionPointers() {
+    flextVkDevice = _functionPointers;
+}
+
+}}
