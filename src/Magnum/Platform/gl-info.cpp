@@ -80,14 +80,14 @@
 
 namespace Magnum {
 
-/** @page magnum-info Magnum Info
-@brief Displays information about Magnum engine and OpenGL capabilities
+/** @page magnum-gl-info Magnum GL Info
+@brief Displays information about Magnum engine OpenGL capabilities
 
 @m_footernavigation
 
 @m_div{m-button m-primary} <a href="http://magnum.graphics/showcase/magnum-info/">@m_div{m-big}Live web version @m_enddiv @m_div{m-small} uses WebAssembly & WebGL @m_enddiv </a> @m_enddiv
 
-@section magnum-info-usage Usage
+@section magnum-gl-info-usage Usage
 
 @code{.sh}
 magnum-info [--magnum-...] [-h|--help] [-s|--short] [--all-extensions]
@@ -102,12 +102,12 @@ Arguments:
 -   `--limits` --- display also limits and implementation-defined values
 -   `--magnum-...` --- engine-specific options (see @ref Context for details)
 
-@section magnum-info-example Example output
+@section magnum-gl-info-example Example output
 
 @code{.shell-session}
 
   +---------------------------------------------------------+
-  | Information about Magnum engine and OpenGL capabilities |
+  |   Information about Magnum engine OpenGL capabilities   |
   +---------------------------------------------------------+
 
 Used application: Platform::WindowlessGlxApplication
@@ -172,7 +172,7 @@ MagnumInfo::MagnumInfo(const Arguments& arguments): Platform::WindowlessApplicat
 
     Debug() << "";
     Debug() << "  +---------------------------------------------------------+";
-    Debug() << "  | Information about Magnum engine and OpenGL capabilities |";
+    Debug() << "  |   Information about Magnum engine OpenGL capabilities   |";
     Debug() << "  +---------------------------------------------------------+";
     Debug() << "";
 
